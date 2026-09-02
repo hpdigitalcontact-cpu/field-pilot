@@ -31,6 +31,14 @@
   gtag('config', 'G-TPCXXB6W73');
 </script>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"Field Pilot","applicationCategory":"BusinessApplication","applicationSubCategory":"Lawn care software","operatingSystem":"Web, iOS, Android","url":"https://field-pilot.co/","description":"Simple lawn care software for scheduling, routes, crews, quotes and invoices, built for lawn care and landscaping businesses.","offers":[{"@type":"Offer","name":"Starter","price":"49","priceCurrency":"USD"},{"@type":"Offer","name":"Team","price":"99","priceCurrency":"USD"},{"@type":"Offer","name":"Business","price":"199","priceCurrency":"USD"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Who is Field Pilot built for?","acceptedAnswer":{"@type":"Answer","text":"Owner-operated lawn care and landscaping companies in the US, from a solo crew to ten. Not plumbers, not cleaners — which is why there's nothing on screen you don't use."}},{"@type":"Question","name":"Can it handle recurring jobs and multiple crews?","acceptedAnswer":{"@type":"Answer","text":"Yes. Set a property to weekly, bi-weekly or monthly and the visits generate themselves. Assign each crew its own route, and see all crews side by side for the day."}},{"@type":"Question","name":"Is the lawn care app really free for my crew?","acceptedAnswer":{"@type":"Answer","text":"Yes. You pay for your plan; every crew member you invite gets the iOS or Android app at no cost, however many you have."}},{"@type":"Question","name":"My crew isn't good with technology.","acceptedAnswer":{"@type":"Answer","text":"One button in the morning, tick the tasks, take photos. No menus, no training session — most crews are running it the same day."}},{"@type":"Question","name":"What if there's no signal at the property?","acceptedAnswer":{"@type":"Answer","text":"The app works offline. Tasks, photos and timings sync to your back office the moment the truck gets signal again."}},{"@type":"Question","name":"How long until I'm actually running on it?","acceptedAnswer":{"@type":"Answer","text":"Add your customers and crews and your first route is scheduled in under 10 minutes. Recurring visits then generate themselves."}},{"@type":"Question","name":"Do I still need accounting software?","acceptedAnswer":{"@type":"Answer","text":"For quotes, invoices and getting paid, no — Field Pilot handles it from completed visits. Your accountant still gets clean exports at year end."}},{"@type":"Question","name":"What is lawn care software?","acceptedAnswer":{"@type":"Answer","text":"It's the software a lawn care or landscaping business runs on: scheduling recurring jobs, planning crew routes, keeping customer and property records, and sending quotes and invoices — instead of juggling texts, paper and spreadsheets."}}]}]}</script>
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2178287276369092');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2178287276369092&ev=PageView&noscript=1" alt="" /></noscript>
 <script src="./image-slot.js"></script>
 <link rel="icon" href="./favicon.ico" sizes="any">
 <link rel="icon" href="./favicon.svg" type="image/svg+xml">
@@ -680,6 +688,9 @@ class Component extends DCLogic {
       const a = e.target.closest && e.target.closest('a[href*="Signup"]');
       if (a && typeof window.gtag === 'function') {
         window.gtag('event', 'signup_start', { location: a.textContent.trim().slice(0, 40) });
+      }
+      if (a && typeof window.fbq === 'function') {
+        window.fbq('track', 'InitiateCheckout', { content_name: a.textContent.trim().slice(0, 40) });
       }
     };
     document.addEventListener('click', this.onCta);
