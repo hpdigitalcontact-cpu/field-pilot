@@ -51,6 +51,8 @@
   @keyframes ypUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
   [data-reveal].in { animation: ypUp .6s ease both; }
 
+  section[id] { scroll-margin-top:80px; }
+
   @media (max-width: 1050px) {
     [data-m~="navlinks"] { display:none !important; }
   }
@@ -97,6 +99,11 @@
     [data-m~="hscroll"] [data-m~="stories2"] > * { min-width:82% !important; flex-shrink:0; scroll-snap-align:center; }
     [data-m~="hscrollcard"] > * { background:#fff !important; border:1px solid #E3E8E1 !important; border-radius:16px !important; padding:20px !important; }
 
+    [data-m~="chapter"] { padding-top:13px !important; margin-bottom:13px !important; }
+    [data-m~="tabshot"] { order:-1; margin-bottom:20px; }
+    [data-m~="tablist"] { gap:7px !important; }
+    [data-m~="tabgroup"] { margin:10px 0 1px !important; }
+    [data-m~="grid"][data-m~="gaplg"] { gap:20px !important; }
     [data-m~="faqitem"] { border-top:1px solid #E3E8E1; padding:2px 0 !important; }
     [data-m~="faqitem"] h3 { font-size:15.5px !important; margin:0 !important; padding:15px 0 !important; }
     [data-m~="faqchev"] { display:flex !important; }
@@ -116,10 +123,8 @@
     </a>
     <div data-m="navlinks" style="display:flex; align-items:center; gap:32px; font-size:14.5px; font-weight:500; color:#5C6B62">
       <a href="#product" style="color:#5C6B62" style-hover="color:#0E2419">Product</a>
-      <a href="#finance" style="color:#5C6B62" style-hover="color:#0E2419">Admin &amp; invoicing</a>
+      <a href="#stories" style="color:#5C6B62" style-hover="color:#0E2419">Results</a>
       <a href="#mobile" style="color:#5C6B62" style-hover="color:#0E2419">Free mobile app</a>
-      <a href="#howitworks" style="color:#5C6B62" style-hover="color:#0E2419">How it works</a>
-      <a href="#results" style="color:#5C6B62" style-hover="color:#0E2419">Results</a>
       <a href="#pricing" style="color:#5C6B62" style-hover="color:#0E2419">Pricing</a>
     </div>
     <div style="display:flex; align-items:center; gap:14px">
@@ -182,10 +187,8 @@
 
   <section data-m="sect" style="padding:96px 0; background:#fff; border-top:1px solid #E3E8E1; border-bottom:1px solid #E3E8E1; overflow:hidden">
     <div data-m="wrap" style="max-width:1180px; margin:0 auto; padding:0 32px">
-      <div style="max-width:620px; margin:0 auto 48px; text-align:center">
-        <span style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; letter-spacing:0.06em; text-transform:uppercase; color:#166B3A; display:inline-flex; align-items:center; justify-content:center; gap:8px; font-weight:600">
-          <span style="width:6px; height:6px; border-radius:50%; background:#8FD14F; box-shadow:0 0 0 3px rgba(143,209,79,0.25)"></span>The problem
-        </span>
+      <div data-m="mb56" data-reveal style="max-width:660px; margin-bottom:44px">
+        <div data-m="chapter" style="display:flex; align-items:center; justify-content:space-between; gap:16px; border-top:1px solid #E3E8E1; padding-top:16px; margin-bottom:16px"><span style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#166B3A; font-weight:600">The problem</span><span data-m="chapnum" style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.08em; color:#5C6B62">01 / 06</span></div>
         <h2 style="font-family:'Space Grotesk',sans-serif; font-weight:600; letter-spacing:-0.02em; line-height:1.08; font-size:clamp(26px,3.2vw,38px); margin-top:14px">Still running your lawn care business like this?</h2>
       </div>
       <div data-m="grid" style="display:grid; grid-template-columns:1fr auto 1fr; gap:28px; align-items:center">
@@ -264,92 +267,150 @@
           </div>
         </div>
       </div>
+
+      <div data-m="grid hscroll" data-reveal style="display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-top:34px">
+        <div data-m="pad28" style="border-radius:16px; padding:26px; border:1px solid #E3E8E1; background:#F6F7F2">
+          <h3 style="font-family:'IBM Plex Mono',monospace; font-size:12px; text-transform:uppercase; letter-spacing:.05em; margin:0 0 14px; color:#5C6B62; font-weight:600">General field-service software</h3>
+          <ul style="list-style:none; padding:0; margin:0">
+            <li style="display:flex; gap:10px; padding:8px 0; font-size:14.5px; color:#5C6B62"><span style="color:#C24545">✕</span>Jobs, work orders, tickets — built for every trade</li>
+            <li style="display:flex; gap:10px; padding:8px 0; font-size:14.5px; color:#5C6B62; border-top:1px solid #E3E8E1"><span style="color:#C24545">✕</span>15+ menu items before your first customer</li>
+            <li style="display:flex; gap:10px; padding:8px 0; font-size:14.5px; color:#5C6B62; border-top:1px solid #E3E8E1"><span style="color:#C24545">✕</span>Days of setup before the crew can use it</li>
+          </ul>
+        </div>
+        <div data-m="pad28" style="border-radius:16px; padding:26px; background:#163C2A; color:#fff; border:1px solid #163C2A">
+          <h3 style="font-family:'IBM Plex Mono',monospace; font-size:12px; text-transform:uppercase; letter-spacing:.05em; margin:0 0 14px; color:#8FD14F; font-weight:600">Field Pilot</h3>
+          <ul style="list-style:none; padding:0; margin:0">
+            <li style="display:flex; gap:10px; padding:8px 0; font-size:14.5px"><span style="color:#8FD14F">✓</span>Customers, properties, crews, routes — your words</li>
+            <li style="display:flex; gap:10px; padding:8px 0; font-size:14.5px; border-top:1px solid rgba(255,255,255,0.12)"><span style="color:#8FD14F">✓</span>Only for recurring lawn care and landscaping</li>
+            <li style="display:flex; gap:10px; padding:8px 0; font-size:14.5px; border-top:1px solid rgba(255,255,255,0.12)"><span style="color:#8FD14F">✓</span>First route scheduled in under 10 minutes</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
   <section data-m="sect" id="product" style="padding:96px 0">
     <div data-m="wrap" style="max-width:1180px; margin:0 auto; padding:0 32px">
-      <div data-m="mb56" data-reveal style="max-width:620px; margin-bottom:56px">
-        <span style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; letter-spacing:0.06em; text-transform:uppercase; color:#166B3A; display:inline-flex; align-items:center; gap:8px; font-weight:600"><span style="width:6px; height:6px; border-radius:50%; background:#8FD14F; box-shadow:0 0 0 3px rgba(143,209,79,0.25)"></span>The product</span>
-        <h2 style="font-family:'Space Grotesk',sans-serif; font-weight:600; letter-spacing:-0.02em; line-height:1.08; font-size:clamp(26px,3.2vw,38px); margin-top:14px">Everything your lawn care business needs to grow. Nothing it doesn't.</h2>
-        <p data-m="lead" style="color:#5C6B62; font-size:16.5px; margin-top:14px">Seven screens. No 20-item sidebar. No setup wizard with a hundred fields.</p>
+      <div data-m="mb56" data-reveal style="max-width:660px; margin-bottom:44px">
+        <div data-m="chapter" style="display:flex; align-items:center; justify-content:space-between; gap:16px; border-top:1px solid #E3E8E1; padding-top:16px; margin-bottom:16px"><span style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#166B3A; font-weight:600">The product</span><span data-m="chapnum" style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.08em; color:#5C6B62">02 / 06</span></div>
+        <h2 style="font-family:'Space Grotesk',sans-serif; font-weight:600; letter-spacing:-0.02em; line-height:1.08; font-size:clamp(26px,3.2vw,38px); margin-top:14px">Run the day. Get paid. Same app.</h2>
+        <p data-m="lead" style="color:#5C6B62; font-size:16.5px; margin-top:14px">The operations side and the money side of your lawn care business, in six screens. These are the real ones — the same you get when you sign up.</p>
       </div>
 
-      <div data-m="row grid gaplg" data-reveal style="display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; padding:0 0 64px">
-        <div>
-          <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#166B3A; text-transform:uppercase; letter-spacing:.06em; font-weight:600">Customers</span>
-          <h3 id="lawn-care-crm" style="font-family:'Space Grotesk',sans-serif; font-weight:600; letter-spacing:-0.02em; line-height:1.08; font-size:27px; margin:12px 0">Every customer, every property, every visit.</h3>
-          <p style="color:#5C6B62; font-size:16px; max-width:440px">Keep customers, properties, job history, notes and photos together in one simple lawn care CRM — not a generic "work order" built for every trade.</p>
+      <div data-m="grid gaplg" data-reveal style="display:grid; grid-template-columns:0.78fr 1fr; gap:44px; align-items:start">
+        <div data-m="tablist" style="display:flex; flex-direction:column; gap:8px">
+          <div data-m="tabgroup" style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#166B3A; font-weight:600; margin-bottom:2px">Operations</div>
+          <button type="button" onClick="{{ t0.pick }}" style="display:block; width:100%; text-align:left; cursor:pointer; font-family:'Inter',sans-serif; border-radius:12px; padding:14px 16px; transition:background .2s ease, border-color .2s ease; background:{{ t0.bg }}; border:1px solid {{ t0.br }}; color:{{ t0.fg }}">
+            <span style="display:flex; align-items:center; justify-content:space-between; gap:12px; font-size:15.5px; font-weight:600">Customers &amp; properties<span style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:{{ t0.mfg }}">{{ t0.mark }}</span></span>
+            <span style="display:{{ t0.show }}; font-size:14px; color:#5C6B62; margin-top:7px">Every customer, their properties, service, frequency and what they bill each month — one simple lawn care CRM.</span>
+          </button>
+          <button type="button" onClick="{{ t1.pick }}" style="display:block; width:100%; text-align:left; cursor:pointer; font-family:'Inter',sans-serif; border-radius:12px; padding:14px 16px; transition:background .2s ease, border-color .2s ease; background:{{ t1.bg }}; border:1px solid {{ t1.br }}; color:{{ t1.fg }}">
+            <span style="display:flex; align-items:center; justify-content:space-between; gap:12px; font-size:15.5px; font-weight:600">Schedule<span style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:{{ t1.mfg }}">{{ t1.mark }}</span></span>
+            <span style="display:{{ t1.show }}; font-size:14px; color:#5C6B62; margin-top:7px">Set weekly, bi-weekly or monthly and the visits generate themselves. Drag one to another day and it just moves.</span>
+          </button>
+          <button type="button" onClick="{{ t2.pick }}" style="display:block; width:100%; text-align:left; cursor:pointer; font-family:'Inter',sans-serif; border-radius:12px; padding:14px 16px; transition:background .2s ease, border-color .2s ease; background:{{ t2.bg }}; border:1px solid {{ t2.br }}; color:{{ t2.fg }}">
+            <span style="display:flex; align-items:center; justify-content:space-between; gap:12px; font-size:15.5px; font-weight:600">Routes<span style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:{{ t2.mfg }}">{{ t2.mark }}</span></span>
+            <span style="display:{{ t2.show }}; font-size:14px; color:#5C6B62; margin-top:7px">Each crew’s stops in the right order, with drive times — an extra property or two per crew, per day.</span>
+          </button>
+          <div data-m="tabgroup" style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#166B3A; font-weight:600; margin:14px 0 2px">Finance</div>
+          <button type="button" onClick="{{ t3.pick }}" style="display:block; width:100%; text-align:left; cursor:pointer; font-family:'Inter',sans-serif; border-radius:12px; padding:14px 16px; transition:background .2s ease, border-color .2s ease; background:{{ t3.bg }}; border:1px solid {{ t3.br }}; color:{{ t3.fg }}">
+            <span style="display:flex; align-items:center; justify-content:space-between; gap:12px; font-size:15.5px; font-weight:600">Quotes<span style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:{{ t3.mfg }}">{{ t3.mark }}</span></span>
+            <span style="display:{{ t3.show }}; font-size:14px; color:#5C6B62; margin-top:7px">Build an estimate from the driveway, send it for e-signature, let the app chase it. Signed quotes become a property.</span>
+          </button>
+          <button type="button" onClick="{{ t4.pick }}" style="display:block; width:100%; text-align:left; cursor:pointer; font-family:'Inter',sans-serif; border-radius:12px; padding:14px 16px; transition:background .2s ease, border-color .2s ease; background:{{ t4.bg }}; border:1px solid {{ t4.br }}; color:{{ t4.fg }}">
+            <span style="display:flex; align-items:center; justify-content:space-between; gap:12px; font-size:15.5px; font-weight:600">Invoices<span style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:{{ t4.mfg }}">{{ t4.mark }}</span></span>
+            <span style="display:{{ t4.show }}; font-size:14px; color:#5C6B62; margin-top:7px">Completed visits become invoice lines on their own. Customers pay online, reminders send themselves.</span>
+          </button>
+          <button type="button" onClick="{{ t5.pick }}" style="display:block; width:100%; text-align:left; cursor:pointer; font-family:'Inter',sans-serif; border-radius:12px; padding:14px 16px; transition:background .2s ease, border-color .2s ease; background:{{ t5.bg }}; border:1px solid {{ t5.br }}; color:{{ t5.fg }}">
+            <span style="display:flex; align-items:center; justify-content:space-between; gap:12px; font-size:15.5px; font-weight:600">Analytics<span style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:{{ t5.mfg }}">{{ t5.mark }}</span></span>
+            <span style="display:{{ t5.show }}; font-size:14px; color:#5C6B62; margin-top:7px">Revenue by month, outstanding balances, what each property is worth. No dashboard to configure.</span>
+          </button>
         </div>
-        <div data-m="shot" style="border-radius:16px; overflow:hidden; border:1px solid #E3E8E1; background:#fff; box-shadow:0 1px 2px rgba(14,36,25,0.04), 0 18px 40px rgba(14,36,25,0.10)">
-          <div style="display:flex; align-items:center; gap:8px; padding:10px 14px; background:#F6F7F2; border-bottom:1px solid #E3E8E1">
-            <span style="width:8px; height:8px; border-radius:50%; background:#DCE6DA"></span>
-            <span style="width:8px; height:8px; border-radius:50%; background:#DCE6DA"></span>
-            <span style="width:8px; height:8px; border-radius:50%; background:#DCE6DA"></span>
-            <span style="margin-left:8px; font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:#5C6B62">Field Pilot · Customers & properties</span>
+
+        <div data-m="tabshot">
+          <div style="border-radius:16px; overflow:hidden; border:1px solid #E3E8E1; background:#fff; box-shadow:0 1px 2px rgba(14,36,25,0.04), 0 18px 40px rgba(14,36,25,0.10)">
+            <div style="display:{{ t0.show }}">
+              <div style="display:flex; align-items:center; gap:8px; padding:10px 14px; background:#F6F7F2; border-bottom:1px solid #E3E8E1">
+                <span style="width:8px; height:8px; border-radius:50%; background:#DCE6DA"></span>
+                <span style="width:8px; height:8px; border-radius:50%; background:#DCE6DA"></span>
+                <span style="width:8px; height:8px; border-radius:50%; background:#DCE6DA"></span>
+                <span style="margin-left:8px; font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:#5C6B62">Field Pilot · Customers & properties</span>
+              </div>
+              <img src="./photos/crm-customers.png" alt="Lawn care CRM: customer and property list with service, frequency, next visit and monthly value" loading="lazy" width="924" height="540" style="display:block; width:100%; height:auto" />
+            </div>
+            <div style="display:{{ t1.show }}">
+              <div style="display:flex; align-items:center; gap:8px; padding:10px 14px; background:#F6F7F2; border-bottom:1px solid #E3E8E1">
+                <span style="width:8px; height:8px; border-radius:50%; background:#DCE6DA"></span>
+                <span style="width:8px; height:8px; border-radius:50%; background:#DCE6DA"></span>
+                <span style="width:8px; height:8px; border-radius:50%; background:#DCE6DA"></span>
+                <span style="margin-left:8px; font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:#5C6B62">Field Pilot · Schedule</span>
+              </div>
+              <img src="./photos/crm-schedule.png" alt="Lawn care scheduling software: a week of recurring visits assigned to crews" loading="lazy" width="924" height="540" style="display:block; width:100%; height:auto" />
+            </div>
+            <div style="display:{{ t2.show }}">
+              <div style="display:flex; align-items:center; gap:8px; padding:10px 14px; background:#F6F7F2; border-bottom:1px solid #E3E8E1">
+                <span style="width:8px; height:8px; border-radius:50%; background:#DCE6DA"></span>
+                <span style="width:8px; height:8px; border-radius:50%; background:#DCE6DA"></span>
+                <span style="width:8px; height:8px; border-radius:50%; background:#DCE6DA"></span>
+                <span style="margin-left:8px; font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:#5C6B62">Field Pilot · Routes</span>
+              </div>
+              <img src="./photos/crm-routes.png" alt="Lawn care route planning: each crew’s stops for the day in order, with drive times" loading="lazy" width="924" height="540" style="display:block; width:100%; height:auto" />
+            </div>
+            <div style="display:{{ t3.show }}">
+              <div style="display:flex; align-items:center; gap:8px; padding:10px 14px; background:#F6F7F2; border-bottom:1px solid #E3E8E1">
+                <span style="width:8px; height:8px; border-radius:50%; background:#DCE6DA"></span>
+                <span style="width:8px; height:8px; border-radius:50%; background:#DCE6DA"></span>
+                <span style="width:8px; height:8px; border-radius:50%; background:#DCE6DA"></span>
+                <span style="margin-left:8px; font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:#5C6B62">Field Pilot · Quotes</span>
+              </div>
+              <img src="./photos/crm-quotes.png" alt="Lawn care estimate software: quotes drafted, sent for e-signature and signed" loading="lazy" width="924" height="540" style="display:block; width:100%; height:auto" />
+            </div>
+            <div style="display:{{ t4.show }}">
+              <div style="display:flex; align-items:center; gap:8px; padding:10px 14px; background:#F6F7F2; border-bottom:1px solid #E3E8E1">
+                <span style="width:8px; height:8px; border-radius:50%; background:#DCE6DA"></span>
+                <span style="width:8px; height:8px; border-radius:50%; background:#DCE6DA"></span>
+                <span style="width:8px; height:8px; border-radius:50%; background:#DCE6DA"></span>
+                <span style="margin-left:8px; font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:#5C6B62">Field Pilot · Invoices</span>
+              </div>
+              <img src="./photos/crm-invoices.png" alt="Lawn care invoicing software: paid, outstanding and ready-to-send invoices built from completed visits" loading="lazy" width="924" height="540" style="display:block; width:100%; height:auto" />
+            </div>
+            <div style="display:{{ t5.show }}">
+              <div style="display:flex; align-items:center; gap:8px; padding:10px 14px; background:#F6F7F2; border-bottom:1px solid #E3E8E1">
+                <span style="width:8px; height:8px; border-radius:50%; background:#DCE6DA"></span>
+                <span style="width:8px; height:8px; border-radius:50%; background:#DCE6DA"></span>
+                <span style="width:8px; height:8px; border-radius:50%; background:#DCE6DA"></span>
+                <span style="margin-left:8px; font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:#5C6B62">Field Pilot · Analytics</span>
+              </div>
+              <img src="./photos/crm-analytics.png" alt="Lawn care business analytics: revenue by month, best properties and quote win rate" loading="lazy" width="924" height="540" style="display:block; width:100%; height:auto" />
+            </div>
           </div>
-          <img src="./photos/crm-customers.png" alt="Field Pilot lawn care CRM: customer and property list with service, frequency, next visit and monthly value" loading="lazy" width="924" height="540" style="display:block; width:100%; height:auto" />
         </div>
       </div>
 
-      <div data-m="row grid gaplg" data-reveal style="display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; padding:64px 0; border-top:1px solid #E3E8E1">
-        <div data-m="shot" style="border-radius:16px; overflow:hidden; border:1px solid #E3E8E1; background:#fff; box-shadow:0 1px 2px rgba(14,36,25,0.04), 0 18px 40px rgba(14,36,25,0.10)">
-          <div style="display:flex; align-items:center; gap:8px; padding:10px 14px; background:#F6F7F2; border-bottom:1px solid #E3E8E1">
-            <span style="width:8px; height:8px; border-radius:50%; background:#DCE6DA"></span>
-            <span style="width:8px; height:8px; border-radius:50%; background:#DCE6DA"></span>
-            <span style="width:8px; height:8px; border-radius:50%; background:#DCE6DA"></span>
-            <span style="margin-left:8px; font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:#5C6B62">Field Pilot · Schedule</span>
+      <div data-m="pad30" data-reveal style="background:#163C2A; color:#fff; border-radius:16px; padding:34px; margin-top:34px">
+        <div data-m="grid" style="display:grid; grid-template-columns:1fr 1fr; gap:34px; align-items:center">
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; color:#8FD14F; font-weight:600">Your business shouldn't follow you home</div>
+            <p data-m="fs26" style="font-family:'Space Grotesk',sans-serif; font-weight:600; letter-spacing:-0.02em; line-height:1.2; font-size:24px; margin:14px 0 12px; text-wrap:pretty">The quote in your sent email, the invoice in a folder, who paid in your head until Sunday night — all of it, in one app.</p>
+            <p style="color:rgba(255,255,255,0.7); font-size:15px; margin:0">Crew finishes at 2:41pm → the invoice line is added → it goes out at month end → paid online, reminders on their own.</p>
           </div>
-          <img src="./photos/crm-schedule.png" alt="Lawn care scheduling software: a week of recurring visits assigned to crews" loading="lazy" width="924" height="540" style="display:block; width:100%; height:auto" />
-        </div>
-        <div>
-          <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#166B3A; text-transform:uppercase; letter-spacing:.06em; font-weight:600">Schedule</span>
-          <h3 id="lawn-care-scheduling" style="font-family:'Space Grotesk',sans-serif; font-weight:600; letter-spacing:-0.02em; line-height:1.08; font-size:27px; margin:12px 0">Lawn care scheduling made simple.</h3>
-          <p style="color:#5C6B62; font-size:16px; max-width:440px">Schedule recurring lawn care jobs, assign them to a crew and keep every customer visit organized from one calendar. Drag a job to another day and it just moves.</p>
-        </div>
-      </div>
-
-      <div data-m="row grid gaplg" data-reveal style="display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; padding:64px 0; border-top:1px solid #E3E8E1">
-        <div>
-          <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#166B3A; text-transform:uppercase; letter-spacing:.06em; font-weight:600">Routes</span>
-          <h3 id="lawn-care-route-planning" style="font-family:'Space Grotesk',sans-serif; font-weight:600; letter-spacing:-0.02em; line-height:1.08; font-size:27px; margin:12px 0">Plan smarter routes for every crew.</h3>
-          <p style="color:#5C6B62; font-size:16px; max-width:440px">Organize daily lawn care routes so your crews know exactly where to go next. One tap re-orders the stops and cuts the driving.</p>
-        </div>
-        <div data-m="shot" style="border-radius:16px; overflow:hidden; border:1px solid #E3E8E1; background:#fff; box-shadow:0 1px 2px rgba(14,36,25,0.04), 0 18px 40px rgba(14,36,25,0.10)">
-          <div style="display:flex; align-items:center; gap:8px; padding:10px 14px; background:#F6F7F2; border-bottom:1px solid #E3E8E1">
-            <span style="width:8px; height:8px; border-radius:50%; background:#DCE6DA"></span>
-            <span style="width:8px; height:8px; border-radius:50%; background:#DCE6DA"></span>
-            <span style="width:8px; height:8px; border-radius:50%; background:#DCE6DA"></span>
-            <span style="margin-left:8px; font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:#5C6B62">Field Pilot · Routes</span>
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; background:rgba(255,255,255,0.06); border-radius:14px; padding:22px 24px">
+            <div>
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:rgba(255,255,255,0.6)">Your evening input</div>
+              <div style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:38px; color:#8FD14F; line-height:1.1">0 minutes</div>
+            </div>
+            <a href="./signup.html" style="display:inline-flex; align-items:center; justify-content:center; font-weight:600; font-size:15px; padding:13px 22px; border-radius:10px; background:#fff; color:#163C2A; transition:transform .15s ease, box-shadow .15s ease" style-hover="transform:translateY(-1px); box-shadow:0 8px 20px rgba(0,0,0,0.15); color:#163C2A">Start free</a>
           </div>
-          <img src="./photos/crm-routes.png" alt="Lawn care route planning: each crew’s stops for the day in order, with drive times" loading="lazy" width="924" height="540" style="display:block; width:100%; height:auto" />
-        </div>
-      </div>
-
-      <div data-m="row grid gaplg" data-reveal style="display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; padding:64px 0 0; border-top:1px solid #E3E8E1">
-        <div data-m="shot" style="border-radius:16px; overflow:hidden; border:1px solid #E3E8E1; background:#fff; box-shadow:0 1px 2px rgba(14,36,25,0.04), 0 18px 40px rgba(14,36,25,0.10)">
-          <div style="display:flex; align-items:center; gap:8px; padding:10px 14px; background:#F6F7F2; border-bottom:1px solid #E3E8E1">
-            <span style="width:8px; height:8px; border-radius:50%; background:#DCE6DA"></span>
-            <span style="width:8px; height:8px; border-radius:50%; background:#DCE6DA"></span>
-            <span style="width:8px; height:8px; border-radius:50%; background:#DCE6DA"></span>
-            <span style="margin-left:8px; font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:#5C6B62">Field Pilot · Today</span>
-          </div>
-          <img src="./photos/crm-today.png" alt="Field Pilot dashboard: visits completed today, crews out, revenue this month and what needs the owner’s attention" loading="lazy" width="924" height="540" style="display:block; width:100%; height:auto" />
-        </div>
-        <div>
-          <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#166B3A; text-transform:uppercase; letter-spacing:.06em; font-weight:600">Team</span>
-          <h3 style="font-family:'Space Grotesk',sans-serif; font-weight:600; letter-spacing:-0.02em; line-height:1.08; font-size:27px; margin:12px 0">Crew management without the group chat.</h3>
-          <p style="color:#5C6B62; font-size:16px; max-width:440px">Group your team into crews, assign each crew its route, and invite them by phone or email — crew scheduling done in minutes.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section data-m="sect" id="mobile" style="padding:96px 0">
+  <section data-m="sect" id="mobile" style="padding:96px 0; background:#fff; border-top:1px solid #E3E8E1; border-bottom:1px solid #E3E8E1">
     <div data-m="inset padxl" style="background:#163C2A; color:#fff; border-radius:28px; margin:0 32px; padding:88px 48px">
       <div data-m="grid gaplg" style="max-width:1180px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center">
         <div>
-          <span style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; letter-spacing:0.06em; text-transform:uppercase; color:#8FD14F; display:inline-flex; align-items:center; gap:8px; font-weight:600"><span style="width:6px; height:6px; border-radius:50%; background:#8FD14F; box-shadow:0 0 0 3px rgba(143,209,79,0.25)"></span>The free lawn care app · for every crew member</span>
+          <div data-m="chapter" style="display:flex; align-items:center; justify-content:space-between; gap:16px; border-top:1px solid rgba(255,255,255,0.18); padding-top:16px; margin-bottom:16px"><span style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#8FD14F; font-weight:600">The free lawn care app · for every crew member</span><span data-m="chapnum" style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.08em; color:rgba(255,255,255,0.45)">03 / 06</span></div>
           <h2 style="font-family:'Space Grotesk',sans-serif; font-weight:600; letter-spacing:-0.02em; line-height:1.08; font-size:clamp(26px,3vw,36px); margin:14px 0 16px">Lawn care software your crew will actually use.</h2>
           <p style="color:rgba(255,255,255,0.72); font-size:16.5px; max-width:440px; margin-bottom:26px">A free lawn care app on iOS and Android. No training: your crew logs in, taps once, and follows the route. Everything they do lands in your office instantly.</p>
           <ul style="list-style:none; padding:0; margin:0 0 26px; display:flex; flex-direction:column; gap:14px">
@@ -403,236 +464,19 @@
     </div>
   </section>
 
-  <section data-m="sect" id="howitworks" style="padding:96px 0">
+  <section data-m="sect" id="stories" style="padding:96px 0; overflow:hidden">
     <div data-m="wrap" style="max-width:1180px; margin:0 auto; padding:0 32px">
-      <div data-m="mb56" data-reveal style="max-width:660px; margin-bottom:56px">
-        <span style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; letter-spacing:0.06em; text-transform:uppercase; color:#166B3A; display:inline-flex; align-items:center; gap:8px; font-weight:600"><span style="width:6px; height:6px; border-radius:50%; background:#8FD14F; box-shadow:0 0 0 3px rgba(143,209,79,0.25)"></span>App + back office</span>
-        <h2 style="font-family:'Space Grotesk',sans-serif; font-weight:600; letter-spacing:-0.02em; line-height:1.08; font-size:clamp(26px,3.2vw,38px); margin-top:14px">One free app in the field. One simple back office for you.</h2>
-        <p data-m="lead" style="color:#5C6B62; font-size:16.5px; margin-top:14px">You plan the week on your computer. They follow the app. Everything syncs both ways, on its own.</p>
-      </div>
-
-      <div data-m="grid" data-reveal style="display:grid; grid-template-columns:1fr auto 1fr; gap:28px; align-items:stretch">
-        <div data-m="pad26" style="background:#fff; border:1px solid #E3E8E1; border-radius:16px; box-shadow:0 1px 2px rgba(14,36,25,0.04), 0 8px 24px rgba(14,36,25,0.06); padding:26px; display:flex; flex-direction:column; justify-content:center">
-          <div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; color:#166B3A; font-weight:600">Phone · crew · free</div>
-          <h3 style="font-family:'Space Grotesk',sans-serif; font-weight:600; letter-spacing:-0.02em; line-height:1.08; font-size:22px; margin:12px 0 8px">They tap. That's it.</h3>
-          <p style="color:#5C6B62; font-size:14.5px">Start my day → the property, its gate code and its tasks → tick, photo, next stop. Nothing to fill in, nothing to send.</p>
-        </div>
-
-        <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; font-family:'IBM Plex Mono',monospace; font-size:11px; color:#5C6B62; text-transform:uppercase; letter-spacing:.06em">
-          <span style="font-size:20px; color:#DCE6DA">⇄</span>
-          <span>live sync</span>
-        </div>
-
-        <div data-m="pad26" style="background:#163C2A; color:#fff; border-radius:16px; padding:26px">
-          <div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; color:#8FD14F; font-weight:600">Computer · owner · CRM</div>
-          <h3 style="font-family:'Space Grotesk',sans-serif; font-weight:600; letter-spacing:-0.02em; line-height:1.08; font-size:22px; margin:12px 0 16px">You just watch it land.</h3>
-          <div style="display:flex; flex-direction:column; gap:10px">
-            <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; background:rgba(255,255,255,0.06); border-radius:12px; padding:13px 14px"><span style="font-size:13.5px">Villa Smith · Crew 1</span><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#8FD14F">DONE · 4 PHOTOS</span></div>
-            <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; background:rgba(255,255,255,0.06); border-radius:12px; padding:13px 14px"><span style="font-size:13.5px">Wilson Estate · Crew 2</span><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#E8A23D">ISSUE FLAGGED</span></div>
-            <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; background:rgba(255,255,255,0.06); border-radius:12px; padding:13px 14px"><span style="font-size:13.5px">Today's invoices</span><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#8FD14F">READY TO SEND</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section data-m="sect" id="results" style="padding:96px 0; background:#fff; border-top:1px solid #E3E8E1; border-bottom:1px solid #E3E8E1">
-    <div data-m="wrap" style="max-width:1180px; margin:0 auto; padding:0 32px">
-      <div data-m="mb56" data-reveal style="max-width:680px; margin-bottom:56px">
-        <span style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; letter-spacing:0.06em; text-transform:uppercase; color:#166B3A; display:inline-flex; align-items:center; gap:8px; font-weight:600"><span style="width:6px; height:6px; border-radius:50%; background:#8FD14F; box-shadow:0 0 0 3px rgba(143,209,79,0.25)"></span>The return on getting organized</span>
-        <h2 style="font-family:'Space Grotesk',sans-serif; font-weight:600; letter-spacing:-0.02em; line-height:1.08; font-size:clamp(26px,3.2vw,38px); margin-top:14px">Better organized weeks. More properties per crew. More revenue.</h2>
-        <p data-m="lead" style="color:#5C6B62; font-size:16.5px; margin-top:14px">Owners running Field Pilot don't work more hours — they stop losing them. Tighter routes, quotes out the same day, invoices sent by the app: that's where the growth comes from.</p>
-      </div>
-
-      <div data-reveal data-m="hscroll grid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-bottom:22px">
-        <div data-m="pad28" style="background:#F6F7F2; border:1px solid #E3E8E1; border-radius:16px; padding:28px">
-          <div data-m="fs44" style="font-family:'Space Grotesk',sans-serif; font-size:44px; font-weight:700; line-height:1">×2.5</div>
-          <div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; color:#166B3A; margin:10px 0 8px">Annual revenue</div>
-          <p style="color:#5C6B62; font-size:14.5px">What owners typically report after two seasons — same team, far fewer wasted hours.</p>
-        </div>
-        <div data-m="pad28" style="background:#F6F7F2; border:1px solid #E3E8E1; border-radius:16px; padding:28px">
-          <div data-m="fs44" style="font-family:'Space Grotesk',sans-serif; font-size:44px; font-weight:700; line-height:1">+2</div>
-          <div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; color:#166B3A; margin:10px 0 8px">Crews hired</div>
-          <p style="color:#5C6B62; font-size:14.5px">Take on more properties without adding a single hour of office work or a dispatcher.</p>
-        </div>
-        <div data-m="pad28" style="background:#F6F7F2; border:1px solid #E3E8E1; border-radius:16px; padding:28px">
-          <div data-m="fs44" style="font-family:'Space Grotesk',sans-serif; font-size:44px; font-weight:700; line-height:1">Same day</div>
-          <div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; color:#166B3A; margin:10px 0 8px">Quotes out</div>
-          <p style="color:#5C6B62; font-size:14.5px">First to answer wins the job. Quotes leave from the truck, invoices go out on their own.</p>
-        </div>
-      </div>
-
-      <div data-m="grid hscroll hscrollsm hscrollcard" data-reveal style="display:grid; grid-template-columns:repeat(3,1fr); gap:22px">
-        <div style="display:flex; gap:12px; align-items:flex-start; font-size:14.5px"><span style="color:#1F8A4C">✓</span><span><strong>Admin runs itself.</strong> <span style="color:#5C6B62">No evening paperwork, no shoebox of receipts, no chasing crews for what got done.</span></span></div>
-        <div style="display:flex; gap:12px; align-items:flex-start; font-size:14.5px"><span style="color:#1F8A4C">✓</span><span><strong>Every route is tighter.</strong> <span style="color:#5C6B62">Stops in the right order means an extra property or two per crew, per day.</span></span></div>
-        <div style="display:flex; gap:12px; align-items:flex-start; font-size:14.5px"><span style="color:#1F8A4C">✓</span><span><strong>You close more deals.</strong> <span style="color:#5C6B62">Quote sent while you're still in the driveway, signed before your competitor calls back.</span></span></div>
-      </div>
-    </div>
-  </section>
-
-  <section data-m="sect" id="finance" style="padding:96px 0">
-    <div data-m="wrap" style="max-width:1180px; margin:0 auto; padding:0 32px">
-      <div data-m="mb56" data-reveal style="max-width:660px; margin-bottom:56px">
-        <span style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; letter-spacing:0.06em; text-transform:uppercase; color:#166B3A; display:inline-flex; align-items:center; gap:8px; font-weight:600"><span style="width:6px; height:6px; border-radius:50%; background:#8FD14F; box-shadow:0 0 0 3px rgba(143,209,79,0.25)"></span>The admin side</span>
-        <h2 style="font-family:'Space Grotesk',sans-serif; font-weight:600; letter-spacing:-0.02em; line-height:1.08; font-size:clamp(26px,3.2vw,38px); margin-top:14px">Your business shouldn't follow you home.</h2>
-        <p data-m="lead" style="color:#5C6B62; font-size:16.5px; margin-top:14px">Quotes, invoices, payments and your books — handled while you work, not after dinner. One place for the whole money side of your lawn care business.</p>
-      </div>
-
-      <div data-m="grid" data-reveal style="display:grid; grid-template-columns:1fr 1.05fr; gap:56px; align-items:center; margin-bottom:22px">
-        <div data-m="pad28" style="background:#fff; border:1px solid #E3E8E1; border-radius:16px; padding:28px; box-shadow:0 1px 2px rgba(14,36,25,0.04), 0 8px 24px rgba(14,36,25,0.06)">
-          <div style="display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin-bottom:22px">
-            <span style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:17px">Wilson Estate · August</span>
-            <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#166B3A">AUTOMATIC</span>
-          </div>
-          <div style="display:flex; gap:14px; align-items:flex-start">
-            <div style="display:flex; flex-direction:column; align-items:center; flex-shrink:0; align-self:stretch">
-              <span style="width:11px; height:11px; border-radius:50%; background:#1F8A4C; box-shadow:0 0 0 3px rgba(31,138,76,0.15); margin-top:4px"></span>
-              <span style="flex:1; width:2px; background:#DCE6DA; margin:4px 0"></span>
-            </div>
-            <div style="padding-bottom:20px; flex:1">
-              <div style="display:flex; align-items:baseline; justify-content:space-between; gap:12px">
-                <span style="font-size:14.5px; font-weight:600">Crew finishes the visit</span>
-                <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#5C6B62; white-space:nowrap">2:41 PM</span>
-              </div>
-              <div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#166B3A; margin-top:3px">4 photos attached from the app</div>
-            </div>
-          </div>
-          <div style="display:flex; gap:14px; align-items:flex-start">
-            <div style="display:flex; flex-direction:column; align-items:center; flex-shrink:0; align-self:stretch">
-              <span style="width:11px; height:11px; border-radius:50%; background:#1F8A4C; box-shadow:0 0 0 3px rgba(31,138,76,0.15); margin-top:4px"></span>
-              <span style="flex:1; width:2px; background:#DCE6DA; margin:4px 0"></span>
-            </div>
-            <div style="padding-bottom:20px; flex:1">
-              <div style="display:flex; align-items:baseline; justify-content:space-between; gap:12px">
-                <span style="font-size:14.5px; font-weight:600">Invoice line added</span>
-                <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#5C6B62; white-space:nowrap">2:41 PM</span>
-              </div>
-              <div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#166B3A; margin-top:3px">$280 · mow, hedges, irrigation check</div>
-            </div>
-          </div>
-          <div style="display:flex; gap:14px; align-items:flex-start">
-            <div style="display:flex; flex-direction:column; align-items:center; flex-shrink:0; align-self:stretch">
-              <span style="width:11px; height:11px; border-radius:50%; background:#1F8A4C; box-shadow:0 0 0 3px rgba(31,138,76,0.15); margin-top:4px"></span>
-              <span style="flex:1; width:2px; background:#DCE6DA; margin:4px 0"></span>
-            </div>
-            <div style="padding-bottom:20px; flex:1">
-              <div style="display:flex; align-items:baseline; justify-content:space-between; gap:12px">
-                <span style="font-size:14.5px; font-weight:600">Invoice sent to the customer</span>
-                <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#5C6B62; white-space:nowrap">Aug 31</span>
-              </div>
-              <div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#166B3A; margin-top:3px">4 visits · $1,120 · no typing</div>
-            </div>
-          </div>
-          <div style="display:flex; gap:14px; align-items:flex-start">
-            <div style="display:flex; flex-direction:column; align-items:center; flex-shrink:0; align-self:stretch">
-              <span style="width:11px; height:11px; border-radius:50%; background:#1F8A4C; box-shadow:0 0 0 3px rgba(31,138,76,0.15); margin-top:4px"></span>
-              
-            </div>
-            <div style="padding-bottom:0; flex:1">
-              <div style="display:flex; align-items:baseline; justify-content:space-between; gap:12px">
-                <span style="font-size:14.5px; font-weight:600">Paid online by card</span>
-                <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#5C6B62; white-space:nowrap">Sep 3</span>
-              </div>
-              <div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#166B3A; margin-top:3px">Reminders would have gone out day 7 and 14</div>
-            </div>
-          </div>
-          <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:24px; padding-top:18px; border-top:1px dashed #E3E8E1">
-            <span style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#5C6B62">YOUR EVENING INPUT</span>
-            <span style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:22px; color:#166B3A">0 minutes</span>
-          </div>
-        </div>
-
-        <div>
-        <div style="display:flex; gap:16px; align-items:flex-start; padding:18px 0; border-top:1px solid #E3E8E1">
-          <span style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; font-weight:600; color:#166B3A; flex-shrink:0; padding-top:3px">01</span>
-          <div>
-            <div style="font-size:15.5px; font-weight:600; margin-bottom:4px">Quotes that close while you’re still in the driveway</div>
-            <p style="color:#5C6B62; font-size:14.5px; margin:0">Build a lawn care estimate from the property in a couple of taps, send it for e-signature, and let Field Pilot chase it for you. Faster answers, more jobs won.</p>
-          </div>
-        </div>
-        <div style="display:flex; gap:16px; align-items:flex-start; padding:18px 0; border-top:1px solid #E3E8E1">
-          <span style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; font-weight:600; color:#166B3A; flex-shrink:0; padding-top:3px">02</span>
-          <div>
-            <div style="font-size:15.5px; font-weight:600; margin-bottom:4px">Invoices you never write</div>
-            <p style="color:#5C6B62; font-size:14.5px; margin:0">Completed visits become invoice lines on their own. Send in one tap, customers pay online, and overdue reminders go out without you lifting a finger.</p>
-          </div>
-        </div>
-        <div style="display:flex; gap:16px; align-items:flex-start; padding:18px 0; border-top:1px solid #E3E8E1">
-          <span style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; font-weight:600; color:#166B3A; flex-shrink:0; padding-top:3px">03</span>
-          <div>
-            <div style="font-size:15.5px; font-weight:600; margin-bottom:4px">Your books, current at all times</div>
-            <p style="color:#5C6B62; font-size:14.5px; margin:0">Paid, unpaid, overdue and what’s coming next month — one screen, always up to date. No spreadsheet to reconcile, no shoebox of receipts.</p>
-          </div>
-        </div>
-        <div style="display:flex; gap:16px; align-items:flex-start; padding:18px 0; border-top:1px solid #E3E8E1">
-          <span style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; font-weight:600; color:#166B3A; flex-shrink:0; padding-top:3px">04</span>
-          <div>
-            <div style="font-size:15.5px; font-weight:600; margin-bottom:4px">Everything about a customer in one place</div>
-            <p style="color:#5C6B62; font-size:14.5px; margin:0">The quote, the invoices, the visit history, the photos, the gate code. Not one thing in your email, another in a folder, another in the truck.</p>
-          </div>
-        </div>
-        </div>
-      </div>
-
-      <div data-m="hscroll grid" data-reveal style="display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-bottom:22px">
-        <div data-m="pad28" style="background:#fff; border:1px solid #E3E8E1; border-radius:16px; padding:28px; box-shadow:0 1px 2px rgba(14,36,25,0.04), 0 8px 24px rgba(14,36,25,0.06)">
-          <div style="width:42px; height:42px; border-radius:10px; background:rgba(31,138,76,0.09); display:flex; align-items:center; justify-content:center; margin-bottom:18px; font-family:'IBM Plex Mono',monospace; font-weight:600; color:#166B3A">Q</div>
-          <h3 id="lawn-care-estimates" style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:18px; margin:0 0 8px">Quotes &amp; estimates</h3>
-          <p style="color:#5C6B62; font-size:14.5px; margin-bottom:18px">Create and send professional lawn care estimates in minutes and get them signed online.</p>
-          <div style="border-top:1px solid #E3E8E1; padding-top:14px">
-            <div style="display:flex; justify-content:space-between; font-size:12.5px; padding:5px 0"><span style="color:#5C6B62">Weekly mowing</span><span style="font-family:'IBM Plex Mono',monospace; font-weight:600">$180</span></div>
-            <div style="display:flex; justify-content:space-between; font-size:12.5px; padding:5px 0"><span style="color:#5C6B62">Hedge trimming</span><span style="font-family:'IBM Plex Mono',monospace; font-weight:600">$95</span></div>
-            <div style="display:flex; justify-content:space-between; font-size:12.5px; padding:8px 0 0; margin-top:6px; border-top:1px dashed #E3E8E1; font-weight:700"><span style="color:#5C6B62">Total / month</span><span style="font-family:'IBM Plex Mono',monospace">$275</span></div>
-          </div>
-        </div>
-        <div data-m="pad28" style="background:#fff; border:1px solid #E3E8E1; border-radius:16px; padding:28px; box-shadow:0 1px 2px rgba(14,36,25,0.04), 0 8px 24px rgba(14,36,25,0.06)">
-          <div style="width:42px; height:42px; border-radius:10px; background:rgba(31,138,76,0.09); display:flex; align-items:center; justify-content:center; margin-bottom:18px; font-family:'IBM Plex Mono',monospace; font-weight:600; color:#166B3A">In</div>
-          <h3 id="lawn-care-invoicing" style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:18px; margin:0 0 8px">Invoices &amp; payments</h3>
-          <p style="color:#5C6B62; font-size:14.5px; margin-bottom:18px">Completed jobs become invoices automatically. Customers pay online, reminders send themselves.</p>
-          <div style="border-top:1px solid #E3E8E1; padding-top:14px">
-            <div style="display:flex; justify-content:space-between; font-size:12.5px; padding:5px 0"><span style="color:#5C6B62">Wilson Estate</span><span style="font-family:'IBM Plex Mono',monospace; font-weight:600; color:#166B3A">Paid</span></div>
-            <div style="display:flex; justify-content:space-between; font-size:12.5px; padding:5px 0"><span style="color:#5C6B62">Parker Residence</span><span style="font-family:'IBM Plex Mono',monospace; font-weight:600">Sent</span></div>
-            <div style="display:flex; justify-content:space-between; font-size:12.5px; padding:8px 0 0; margin-top:6px; border-top:1px dashed #E3E8E1; font-weight:700"><span style="color:#5C6B62">Outstanding</span><span style="font-family:'IBM Plex Mono',monospace">$420</span></div>
-          </div>
-        </div>
-        <div data-m="pad28" style="background:#fff; border:1px solid #E3E8E1; border-radius:16px; padding:28px; box-shadow:0 1px 2px rgba(14,36,25,0.04), 0 8px 24px rgba(14,36,25,0.06)">
-          <div style="width:42px; height:42px; border-radius:10px; background:rgba(31,138,76,0.09); display:flex; align-items:center; justify-content:center; margin-bottom:18px; font-family:'IBM Plex Mono',monospace; font-weight:600; color:#166B3A">%</div>
-          <h3 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:18px; margin:0 0 8px">Books &amp; numbers</h3>
-          <p style="color:#5C6B62; font-size:14.5px; margin-bottom:18px">Revenue, outstanding balances and what each customer is worth — current every single day.</p>
-          <div style="border-top:1px solid #E3E8E1; padding-top:14px">
-            <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; font-weight:700">$18,240</div>
-            <div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#5C6B62; margin-top:2px">Revenue this month · +12% vs last month</div>
-          </div>
-        </div>
-      </div>
-
-      <div data-m="pad30" data-reveal style="background:#163C2A; color:#fff; border-radius:16px; padding:38px">
-        <div data-m="grid" style="display:grid; grid-template-columns:1fr 1fr; gap:38px; align-items:center">
-          <div>
-            <div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; color:#8FD14F; font-weight:600">Where the admin used to live</div>
-            <ul style="list-style:none; padding:0; margin:16px 0 0">
-              <li style="display:flex; gap:10px; padding:8px 0; font-size:14.5px; color:rgba(255,255,255,0.72)"><span style="color:#C24545">✕</span>The quote, somewhere in your sent email</li>
-              <li style="display:flex; gap:10px; padding:8px 0; font-size:14.5px; color:rgba(255,255,255,0.72); border-top:1px solid rgba(255,255,255,0.12)"><span style="color:#C24545">✕</span>The invoice, in a folder on the laptop</li>
-              <li style="display:flex; gap:10px; padding:8px 0; font-size:14.5px; color:rgba(255,255,255,0.72); border-top:1px solid rgba(255,255,255,0.12)"><span style="color:#C24545">✕</span>Who paid, in your head until Sunday night</li>
-            </ul>
-          </div>
-          <div>
-            <p data-m="fs26" style="font-family:'Space Grotesk',sans-serif; font-weight:600; letter-spacing:-0.02em; line-height:1.2; font-size:24px; margin:0 0 14px; text-wrap:pretty">Now it all lives in one app, built for lawn care — so the evening belongs to your family, not your paperwork.</p>
-            <a href="./signup.html" style="display:inline-flex; align-items:center; justify-content:center; font-weight:600; font-size:15px; padding:13px 22px; border-radius:10px; background:#fff; color:#163C2A; transition:transform .15s ease, box-shadow .15s ease" style-hover="transform:translateY(-1px); box-shadow:0 8px 20px rgba(0,0,0,0.15); color:#163C2A">Start free</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section data-m="sect" id="stories" style="padding:96px 0">
-    <div data-m="wrap" style="max-width:1180px; margin:0 auto; padding:0 32px">
-      <div data-m="mb56" data-reveal style="max-width:680px; margin-bottom:56px">
-        <span style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; letter-spacing:0.06em; text-transform:uppercase; color:#166B3A; display:inline-flex; align-items:center; gap:8px; font-weight:600"><span style="width:6px; height:6px; border-radius:50%; background:#8FD14F; box-shadow:0 0 0 3px rgba(143,209,79,0.25)"></span>Owners, in their words</span>
+      <div data-m="mb56" data-reveal style="max-width:660px; margin-bottom:44px">
+        <div data-m="chapter" style="display:flex; align-items:center; justify-content:space-between; gap:16px; border-top:1px solid #E3E8E1; padding-top:16px; margin-bottom:16px"><span style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#166B3A; font-weight:600">Owners, in their words</span><span data-m="chapnum" style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.08em; color:#5C6B62">04 / 06</span></div>
         <h2 style="font-family:'Space Grotesk',sans-serif; font-weight:600; letter-spacing:-0.02em; line-height:1.08; font-size:clamp(26px,3.2vw,38px); margin-top:14px">Focus on the work that pays. Get your evenings back.</h2>
         <p data-m="lead" style="color:#5C6B62; font-size:16.5px; margin-top:14px">Lawn care and landscaping owners — not "field service" in general — running their whole week on Field Pilot.</p>
       </div>
 
+      <div data-m="hscroll grid hscrollsm hscrollcard" data-reveal style="display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-bottom:34px">
+        <div><div data-m="fs44" style="font-family:'Space Grotesk',sans-serif; font-size:40px; font-weight:700; line-height:1">×2.5</div><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:#5C6B62; margin-top:8px">Annual revenue, two seasons</div></div>
+        <div><div data-m="fs44" style="font-family:'Space Grotesk',sans-serif; font-size:40px; font-weight:700; line-height:1">+2</div><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:#5C6B62; margin-top:8px">Crews hired, zero office work</div></div>
+        <div><div data-m="fs44" style="font-family:'Space Grotesk',sans-serif; font-size:40px; font-weight:700; line-height:1">Same day</div><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:#5C6B62; margin-top:8px">Quotes out, from the truck</div></div>
+      </div>
       <div data-m="grid hscroll" data-reveal style="display:grid; grid-template-columns:1.15fr 1fr; gap:22px; margin-bottom:22px">
         <div data-m="pad38" style="background:#163C2A; color:#fff; border-radius:16px; padding:38px">
           <div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; color:#8FD14F; font-weight:600">Revenue · $240K → $610K in two seasons</div>
@@ -681,40 +525,10 @@
     </div>
   </section>
 
-  <section data-m="sect" style="padding:96px 0; background:#fff; border-top:1px solid #E3E8E1; border-bottom:1px solid #E3E8E1">
+  <section data-m="sect" id="pricing" style="padding:96px 0; background:#fff; border-top:1px solid #E3E8E1; border-bottom:1px solid #E3E8E1">
     <div data-m="wrap" style="max-width:1180px; margin:0 auto; padding:0 32px">
-      <div data-m="mb56" data-reveal style="text-align:center; max-width:720px; margin:0 auto 56px">
-        <span style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; letter-spacing:0.06em; text-transform:uppercase; color:#166B3A; display:inline-flex; align-items:center; justify-content:center; gap:8px; font-weight:600"><span style="width:6px; height:6px; border-radius:50%; background:#8FD14F; box-shadow:0 0 0 3px rgba(143,209,79,0.25)"></span>Why Field Pilot</span>
-        <h2 style="font-family:'Space Grotesk',sans-serif; font-weight:600; letter-spacing:-0.02em; line-height:1.08; font-size:clamp(26px,3.2vw,38px); margin-top:14px">Built for lawn care and landscaping. Not plumbers, cleaners and electricians.</h2>
-        <p data-m="lead" style="color:#5C6B62; margin-top:14px; font-size:16.5px">General field-service software has to work for every trade — which means dozens of concepts that don't apply to yours. Field Pilot only does one thing.</p>
-      </div>
-      <div data-m="grid hscroll" data-reveal style="display:grid; grid-template-columns:1fr 1fr; gap:24px">
-        <div data-m="pad30" style="border-radius:16px; padding:30px; border:1px solid #E3E8E1; background:#F6F7F2">
-          <h4 style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; text-transform:uppercase; letter-spacing:.05em; margin-bottom:18px; color:#5C6B62; font-weight:600">General field-service software</h4>
-          <ul style="list-style:none; padding:0; margin:0">
-            <li style="display:flex; gap:10px; padding:9px 0; font-size:14.5px"><span style="color:#C24545">✕</span>Jobs, work orders, tickets — generic terms for every trade</li>
-            <li style="display:flex; gap:10px; padding:9px 0; font-size:14.5px; border-top:1px solid #E3E8E1"><span style="color:#C24545">✕</span>15+ menu items before you've added a single client</li>
-            <li style="display:flex; gap:10px; padding:9px 0; font-size:14.5px; border-top:1px solid #E3E8E1"><span style="color:#C24545">✕</span>Built to also serve plumbers, HVAC, cleaners, contractors</li>
-            <li style="display:flex; gap:10px; padding:9px 0; font-size:14.5px; border-top:1px solid #E3E8E1"><span style="color:#C24545">✕</span>Days of setup before your team can use it</li>
-          </ul>
-        </div>
-        <div data-m="pad30" style="border-radius:16px; padding:30px; background:#163C2A; color:#fff; border:1px solid #163C2A">
-          <h4 style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; text-transform:uppercase; letter-spacing:.05em; margin-bottom:18px; color:#8FD14F; font-weight:600">Field Pilot</h4>
-          <ul style="list-style:none; padding:0; margin:0">
-            <li style="display:flex; gap:10px; padding:9px 0; font-size:14.5px"><span style="color:#8FD14F">✓</span>Customers, crews, routes — your actual vocabulary</li>
-            <li style="display:flex; gap:10px; padding:9px 0; font-size:14.5px; border-top:1px solid rgba(255,255,255,0.12)"><span style="color:#8FD14F">✓</span>Seven screens. Open it, know what to do</li>
-            <li style="display:flex; gap:10px; padding:9px 0; font-size:14.5px; border-top:1px solid rgba(255,255,255,0.12)"><span style="color:#8FD14F">✓</span>Built exclusively for recurring lawn care and landscaping</li>
-            <li style="display:flex; gap:10px; padding:9px 0; font-size:14.5px; border-top:1px solid rgba(255,255,255,0.12)"><span style="color:#8FD14F">✓</span>First route scheduled in under 10 minutes</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section data-m="sect" id="pricing" style="padding:96px 0">
-    <div data-m="wrap" style="max-width:1180px; margin:0 auto; padding:0 32px">
-      <div data-m="mb56" data-reveal style="max-width:620px; margin:0 auto 56px; text-align:center">
-        <span style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; letter-spacing:0.06em; text-transform:uppercase; color:#166B3A; display:inline-flex; align-items:center; justify-content:center; gap:8px; font-weight:600"><span style="width:6px; height:6px; border-radius:50%; background:#8FD14F; box-shadow:0 0 0 3px rgba(143,209,79,0.25)"></span>Pricing</span>
+      <div data-m="mb56" data-reveal style="max-width:660px; margin-bottom:44px">
+        <div data-m="chapter" style="display:flex; align-items:center; justify-content:space-between; gap:16px; border-top:1px solid #E3E8E1; padding-top:16px; margin-bottom:16px"><span style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#166B3A; font-weight:600">Pricing</span><span data-m="chapnum" style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.08em; color:#5C6B62">05 / 06</span></div>
         <h2 style="font-family:'Space Grotesk',sans-serif; font-weight:600; letter-spacing:-0.02em; line-height:1.08; font-size:clamp(26px,3.2vw,38px); margin-top:14px">Simple pricing that grows with your crews.</h2>
         <p data-m="lead" style="color:#5C6B62; font-size:16.5px; margin-top:14px">No setup fees. No contracts. Cancel anytime.</p>
       </div>
@@ -767,10 +581,10 @@
     </div>
   </section>
 
-  <section data-m="sect" id="faq" style="padding:96px 0; background:#fff; border-top:1px solid #E3E8E1; border-bottom:1px solid #E3E8E1">
+  <section data-m="sect" id="faq" style="padding:96px 0">
     <div data-m="wrap" style="max-width:1180px; margin:0 auto; padding:0 32px">
-      <div data-m="mb48" data-reveal style="max-width:620px; margin-bottom:48px">
-        <span style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; letter-spacing:0.06em; text-transform:uppercase; color:#166B3A; display:inline-flex; align-items:center; gap:8px; font-weight:600"><span style="width:6px; height:6px; border-radius:50%; background:#8FD14F; box-shadow:0 0 0 3px rgba(143,209,79,0.25)"></span>Before you ask</span>
+      <div data-m="mb56" data-reveal style="max-width:660px; margin-bottom:44px">
+        <div data-m="chapter" style="display:flex; align-items:center; justify-content:space-between; gap:16px; border-top:1px solid #E3E8E1; padding-top:16px; margin-bottom:16px"><span style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#166B3A; font-weight:600">Before you ask</span><span data-m="chapnum" style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.08em; color:#5C6B62">06 / 06</span></div>
         <h2 style="font-family:'Space Grotesk',sans-serif; font-weight:600; letter-spacing:-0.02em; line-height:1.08; font-size:clamp(26px,3.2vw,38px); margin-top:14px">The questions every owner asks us.</h2>
       </div>
       <div data-m="grid gapmd" data-reveal style="display:grid; grid-template-columns:1fr 1fr; gap:22px 48px">
@@ -840,7 +654,7 @@
       </a>
       <div style="display:flex; gap:26px; font-size:13.5px; color:#5C6B62">
         <a href="#product" style="color:#5C6B62" style-hover="color:#0E2419">Product</a>
-        <a href="#finance" style="color:#5C6B62" style-hover="color:#0E2419">Admin &amp; invoicing</a>
+        <a href="#stories" style="color:#5C6B62" style-hover="color:#0E2419">Results</a>
         <a href="#pricing" style="color:#5C6B62" style-hover="color:#0E2419">Pricing</a>
         <a href="#top" style="color:#5C6B62" style-hover="color:#0E2419">field-pilot.co</a>
       </div>
@@ -854,7 +668,7 @@
 </template></x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { heroStep: 0, appStep: 0, crews: 2, price: 65, isMobile: false, openFaq: 0 };
+  state = { heroStep: 0, appStep: 0, crews: 2, price: 65, isMobile: false, openFaq: 0, tab: 0 };
 
   componentDidMount() {
     this.mq = window.matchMedia('(max-width: 820px)');
@@ -917,6 +731,20 @@ class Component extends DCLogic {
     const chipOn = h >= 4;
     const appDone = a >= 4;
 
+    const tabs = {};
+    for (let i = 0; i < 6; i++) {
+      const on = this.state.tab === i;
+      tabs['t' + i] = {
+        bg: on ? '#fff' : 'transparent',
+        br: on ? '#1F8A4C' : '#E3E8E1',
+        fg: '#0E2419',
+        mfg: on ? '#166B3A' : '#DCE6DA',
+        mark: on ? '●' : '○',
+        show: on ? 'block' : 'none',
+        pick: () => this.setState({ tab: i })
+      };
+    }
+
     const faq = {};
     for (let i = 0; i < 8; i++) {
       const open = !this.state.isMobile || this.state.openFaq === i;
@@ -928,7 +756,7 @@ class Component extends DCLogic {
       };
     }
 
-    return Object.assign(faq, {
+    return Object.assign(faq, tabs, {
       h0: this.task(h > 0, true),
       h1: this.task(h > 1, true),
       h2: this.task(h > 2, true),
