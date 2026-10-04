@@ -35,8 +35,7 @@
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
 if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '2178287276369092');
-fbq('track', 'PageView');
+if (!window.__fpPixel) { window.__fpPixel = true; fbq('init', '2178287276369092'); fbq('track', 'PageView'); }
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2178287276369092&ev=PageView&noscript=1" alt="" /></noscript>
 <script src="./image-slot.js"></script>
@@ -175,15 +174,9 @@ fbq('track', 'PageView');
 
       <div data-m="heromock" style="position:relative">
         <div data-m="glow" style="position:absolute; width:320px; height:320px; background:radial-gradient(circle, rgba(143,209,79,0.35), transparent 70%); filter:blur(10px); top:-70px; right:-70px; z-index:0; pointer-events:none"></div>
-        <div style="position:relative; z-index:1; background:#163C2A; border-radius:20px; padding:12px; box-shadow:0 1px 2px rgba(14,36,25,0.04), 0 18px 44px rgba(14,36,25,0.14)">
-          <div style="position:relative; aspect-ratio:16 / 9; border-radius:12px; background:linear-gradient(160deg,#1B4B34,#0E2419); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; overflow:hidden">
-            <div style="width:64px; height:64px; border-radius:50%; background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.25); display:flex; align-items:center; justify-content:center">
-              <svg viewBox="0 0 24 24" style="width:22px; height:22px; margin-left:3px"><path d="M8 5v14l11-7z" fill="#8FD14F"></path></svg>
-            </div>
-            <div style="text-align:center; padding:0 24px">
-              <div style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:17px; color:#fff; letter-spacing:-0.01em">See Field Pilot run a full week</div>
-              <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:rgba(255,255,255,0.5); margin-top:6px">Product tour · 90 seconds</div>
-            </div>
+        <div style="position:relative; z-index:1; background:#0E2419; border-radius:16px; padding:0; overflow:hidden; box-shadow:0 1px 2px rgba(14,36,25,0.04), 0 24px 56px rgba(14,36,25,0.18)">
+          <div style="position:relative; aspect-ratio:16 / 9; background:#0E2419; overflow:hidden">
+            <iframe src="https://www.youtube.com/embed/rmIa_YhzrJs?rel=0&amp;playsinline=1" title="Field Pilot product demo" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="true" style="position:absolute; inset:0; width:100%; height:100%; border:0; background:#0E2419"></iframe>
           </div>
         </div>
         <div style="display:flex; align-items:center; gap:18px; flex-wrap:wrap; margin-top:16px; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:#5C6B62">
@@ -192,6 +185,7 @@ fbq('track', 'PageView');
       </div>
     </div>
   </section>
+
 
   <section data-m="sect" style="padding:96px 0; background:#fff; border-top:1px solid #E3E8E1; border-bottom:1px solid #E3E8E1; overflow:hidden">
     <div data-m="wrap" style="max-width:1180px; margin:0 auto; padding:0 32px">
@@ -676,7 +670,8 @@ fbq('track', 'PageView');
 </template></x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { heroStep: 0, appStep: 0, crews: 2, price: 65, isMobile: false, openFaq: 0, tab: 0 };
+  state = { heroStep: 0, appStep: 0, crews: 2, price: 65, isMobile: false, openFaq: 0, tab: 0, playing: false };
+  videoRef = React.createRef();
 
   componentDidMount() {
     this.mq = window.matchMedia('(max-width: 820px)');
@@ -768,6 +763,15 @@ class Component extends DCLogic {
     }
 
     return Object.assign(faq, tabs, {
+      videoRef: this.videoRef,
+      showPoster: !this.state.playing,
+      videoControls: this.state.playing,
+      playVideo: () => {
+        this.setState({ playing: true });
+        if (typeof window.gtag === 'function') window.gtag('event', 'video_play', { video: 'product_demo' });
+        if (typeof window.fbq === 'function') window.fbq('track', 'ViewContent', { content_name: 'product demo video' });
+      },
+      videoEnded: () => this.setState({ playing: false }),
       h0: this.task(h > 0, true),
       h1: this.task(h > 1, true),
       h2: this.task(h > 2, true),
