@@ -21,6 +21,7 @@ if (!window.__fpPixel) { window.__fpPixel = true; fbq('init', '2178287276369092'
 <link rel="apple-touch-icon" href="./icon-180.png">
 <link rel="manifest" href="./manifest.json">
 <meta name="theme-color" content="#163C2A">
+<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
@@ -110,7 +111,7 @@ if (!window.__fpPixel) { window.__fpPixel = true; fbq('init', '2178287276369092'
         </div>
 
         <p style="font-size:12.5px; color:#5C6B62; text-align:center; margin:14px 0 6px">By signing up, you accept our <a href="#">Terms of Service</a>.</p>
-        <p style="font-size:13.5px; text-align:center; margin:0"><a href="./app.html" style="font-weight:600; text-decoration:underline">I already have an account</a></p>
+        <p style="font-size:13.5px; text-align:center; margin:0"><a href="./login.html?v=20261005" style="font-weight:600; text-decoration:underline">I already have an account</a></p>
       </div>
     </sc-if>
 
@@ -148,7 +149,7 @@ class Component extends DCLogic {
     if (typeof window.gtag === 'function') window.gtag('event', 'signup_complete', { team_size: s.size, source: s.heard || 'none' });
     if (typeof window.fbq === 'function') window.fbq('track', 'Lead', { content_name: 'workspace created' });
     this.setState({ done: true, error: '' });
-    this._t = setTimeout(() => { window.location.href = './app.html'; }, 1600);
+    this._t = setTimeout(() => { window.location.href = './app.html?v=20261005'; }, 1600);
   };
 
   componentWillUnmount() { clearTimeout(this._t); }
