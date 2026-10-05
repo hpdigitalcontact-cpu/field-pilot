@@ -45,6 +45,8 @@ if (!window.__fpPixel) { window.__fpPixel = true; fbq('init', '2178287276369092'
     [data-m="crow"] > * { font-size:12.5px !important; }
   }
 </style>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="./fp-db.js?v=20261005c"></script>
 </helmet>
 
 <div data-m="shell" style="display:grid; grid-template-columns:248px 1fr; min-height:100vh">
@@ -57,8 +59,8 @@ if (!window.__fpPixel) { window.__fpPixel = true; fbq('init', '2178287276369092'
     </a>
 
     <div style="background:rgba(255,255,255,0.07); border-radius:12px; padding:12px 13px">
-      <div style="font-size:13.5px; font-weight:600">Halloran Lawn &amp; Garden</div>
-      <div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.05em; color:rgba(255,255,255,0.6); margin-top:2px">3 CREWS · 24 PROPERTIES</div>
+      <div style="font-size:13.5px; font-weight:600">{{ companyName }}</div>
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.05em; color:rgba(255,255,255,0.6); margin-top:2px">{{ companyMeta }}</div>
     </div>
 
     <div style="display:flex; flex-direction:column; gap:6px">
@@ -74,11 +76,19 @@ if (!window.__fpPixel) { window.__fpPixel = true; fbq('init', '2178287276369092'
     </div>
 
     <div style="margin-top:auto; display:flex; align-items:center; gap:10px; border-top:1px solid rgba(255,255,255,0.12); padding-top:16px">
-      <img src="./photos/mike.jpg" alt="Mike Halloran" style="width:34px; height:34px; border-radius:50%; object-fit:cover" />
-      <div>
-        <div style="font-size:13px; font-weight:600">Mike Halloran</div>
-        <div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:rgba(255,255,255,0.6)">OWNER</div>
+      <sc-if value="{{ isDemo }}" hint-placeholder-val="{{ true }}">
+        <img src="./photos/mike.jpg" alt="Mike Halloran" style="width:34px; height:34px; border-radius:50%; object-fit:cover" />
+      </sc-if>
+      <sc-if value="{{ live }}" hint-placeholder-val="{{ false }}">
+        <span style="width:34px; height:34px; border-radius:50%; background:linear-gradient(155deg,#8FD14F,#1F8A4C); display:flex; align-items:center; justify-content:center; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:13px; color:#0E2419; flex-shrink:0">{{ ownerInitials }}</span>
+      </sc-if>
+      <div style="min-width:0; flex:1">
+        <div style="font-size:13px; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis">{{ ownerName }}</div>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:rgba(255,255,255,0.6)">{{ ownerRole }}</div>
       </div>
+      <sc-if value="{{ live }}" hint-placeholder-val="{{ false }}">
+        <button type="button" onClick="{{ logout }}" style="border:1px solid rgba(255,255,255,0.2); background:transparent; color:rgba(255,255,255,0.8); border-radius:8px; padding:6px 9px; font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.05em; cursor:pointer">LOG OUT</button>
+      </sc-if>
     </div>
   </aside>
 
@@ -673,6 +683,11 @@ class Component extends DCLogic {
     form: { name: '', address: '', service: 'lawn', freq: 'weekly', price: '65' },
     quoteClient: '',
     query: '',
+    live: false,
+    company: null,
+    user: null,
+    dbQuotes: [],
+    dbInvoices: [],
     clients: [
       { name: 'Villa Johnson', address: '18 Oak Ridge Rd', city: 'Charlotte NC', zip: '28203', contact: 'Mrs. Johnson', phone: '(704) 555-0142', email: 'j.johnson@mail.com', prefers: 'Text message', service: 'Full maintenance', frequency: 'WEEKLY', next: 'Mon 17', price: '$95', monthly: '$380', ytd: '$3,040', crew: 'Crew 2', since: 'MAR 2023', gate: '4932', dog: 'Yes — Buddy, friendly golden retriever', parking: 'Driveway, left side', utilities: 'Outdoor tap by the shed', duration: '52 MIN', tasks: ['Mow lawn', 'Trim hedges', 'Check irrigation', 'Blow paths'], payment: 'Card on file', terms: 'Net 15', billStatus: 'UP TO DATE', note: 'Call before entering — the dog is out in the morning.' },
       { name: 'Parker Residence', address: '7 Birch Lane', city: 'Charlotte NC', zip: '28211', contact: 'Dan Parker', phone: '(704) 555-0188', email: 'dan.parker@mail.com', prefers: 'Phone call', service: 'Lawn maintenance', frequency: 'BI-WEEKLY', next: 'Tue 18', price: '$65', monthly: '$130', ytd: '$1,040', crew: 'Crew 1', since: 'JUN 2024', gate: '1180', dog: 'No', parking: 'Street only, no driveway', utilities: 'Tap at the back of the house', duration: '47 MIN', tasks: ['Mow lawn', 'Edge borders', 'Blow paths'], payment: 'Bank transfer', terms: 'Net 30', billStatus: 'UNPAID $420', note: 'Bins are out front on Tuesdays — do not block them.' },
@@ -718,6 +733,20 @@ class Component extends DCLogic {
       gate: '—',
       note: 'no access note yet'
     };
+    if (this.state.live && this.db) {
+      this.db.from('customers').insert({
+        name: entry.name, address: f.address.trim() || null, service: f.service, frequency: f.freq, price_per_visit: Number(f.price) || 0
+      }).select().single().then(({ data, error }) => {
+        if (error) return this.flash('Could not save — ' + error.message);
+        this.setState(s => ({
+          clients: [this.fromRow(data)].concat(s.clients),
+          showNewClient: false, view: 'clients', currentId: 0,
+          form: { name: '', address: '', service: 'lawn', freq: 'weekly', price: '65' }
+        }));
+        this.flash(entry.name + ' saved');
+      });
+      return;
+    }
     this.setState(s => ({
       clients: [entry].concat(s.clients),
       showNewClient: false,
@@ -728,6 +757,69 @@ class Component extends DCLogic {
   };
 
   componentWillUnmount() { clearTimeout(this._t); }
+
+  async componentDidMount() {
+    const db = window.getFPDB ? await window.getFPDB() : null;
+    if (!db) return;
+    this.db = db;
+    const { data } = await db.auth.getSession();
+    const session = data && data.session;
+    if (!session) {
+      if (window.fpIsLiveHost && window.fpIsLiveHost()) window.location.href = './login.html?v=20261005c';
+      return;
+    }
+    const user = session.user;
+    const [co, cu, qu, inv] = await Promise.all([
+      db.from('companies').select('*').eq('owner_id', user.id).maybeSingle(),
+      db.from('customers').select('*').order('created_at', { ascending: false }),
+      db.from('quotes').select('*').order('created_at', { ascending: false }),
+      db.from('invoices').select('*').order('created_at', { ascending: false })
+    ]);
+    this.setState({
+      live: true,
+      user: user,
+      company: co.data || { name: (user.user_metadata && user.user_metadata.company) || 'My company' },
+      clients: (cu.data || []).map(r => this.fromRow(r)),
+      dbQuotes: qu.data || [],
+      dbInvoices: inv.data || [],
+      currentId: 0
+    });
+  }
+
+  fromRow(r) {
+    const price = Number(r.price_per_visit) || 0;
+    const per = r.frequency === 'weekly' ? 4 : r.frequency === 'biweekly' ? 2 : 1;
+    const svc = r.service === 'landscaping' ? 'Landscaping' : r.service === 'both' || r.service === 'full' ? 'Full maintenance' : 'Lawn maintenance';
+    const since = new Date(r.created_at).toLocaleDateString('en-US', { month: 'short', year: 'numeric' }).toUpperCase();
+    return {
+      id: r.id, name: r.name, address: r.address || 'address to complete', city: r.city || '—', zip: r.zip || '—',
+      contact: '—', phone: r.phone || '—', email: r.email || '—', prefers: 'Text message',
+      service: svc, frequency: r.frequency === 'biweekly' ? 'BI-WEEKLY' : r.frequency === 'monthly' ? 'MONTHLY' : 'WEEKLY',
+      next: '—', price: '$' + price, monthly: '$' + (price * per), ytd: '$0', crew: r.crew || 'Unassigned', since: since,
+      gate: r.gate_code || '—', dog: r.dog_name || 'Not recorded', parking: 'Not recorded', utilities: 'Not recorded',
+      duration: '—', tasks: ['Mow lawn'], payment: 'Not set', terms: 'Net 15', billStatus: 'NEW', note: r.access_notes || 'no access note yet'
+    };
+  }
+
+  logout = async () => {
+    if (this.db) await this.db.auth.signOut();
+    window.location.href = './login.html?v=20261005c';
+  };
+
+  saveQuoteLive = async () => {
+    const name = this.state.quoteClient.trim() || 'New customer';
+    const { data, error } = await this.db.from('quotes').insert({ customer_name: name, detail: 'WEEKLY MOWING + HEDGE TRIMMING', total: 275, status: 'sent' }).select().single();
+    if (error) return this.flash('Could not save the quote — ' + error.message);
+    this.setState(s => ({ dbQuotes: [data].concat(s.dbQuotes), showNewQuote: false, view: 'quotes', quoteClient: '' }));
+    this.flash('Quote saved and sent to ' + name);
+  };
+
+  setQuoteStatus = async (q, status, msg) => {
+    const { error } = await this.db.from('quotes').update({ status: status }).eq('id', q.id);
+    if (error) return this.flash(error.message);
+    this.setState(s => ({ dbQuotes: s.dbQuotes.map(x => x.id === q.id ? Object.assign({}, x, { status: status }) : x) }));
+    this.flash(msg);
+  };
 
   stopColor(status) {
     return status === 'DONE' ? '#1F8A4C' : status === 'NOW' ? '#E8A23D' : status === 'DELAYED' ? '#C24545' : '#5C6B62';
@@ -834,13 +926,28 @@ class Component extends DCLogic {
         ? { bg: 'rgba(232,162,61,0.16)', fg: '#B5761F' }
         : { bg: '#F6F7F2', fg: '#5C6B62' };
 
-    const quotes = [
+    const money = (n) => '$' + (Number(n) || 0).toLocaleString('en-US');
+    const qVM = (q) => {
+      const st = String(q.status || 'draft').toUpperCase();
+      const kind = st === 'SIGNED' ? 'ok' : st === 'SENT' ? 'warn' : 'n';
+      const btn = st === 'DRAFT' ? { l: 'Send', bg: '#1F8A4C', fg: '#fff', a: () => this.setQuoteStatus(q, 'sent', 'Quote sent to ' + q.customer_name) }
+        : st === 'SENT' ? { l: 'Mark signed', bg: '#fff', fg: '#0E2419', a: () => this.setQuoteStatus(q, 'signed', 'Quote marked as signed') }
+        : { l: 'Signed', bg: '#0E2419', fg: '#fff', a: () => this.flash('Signed on ' + new Date(q.created_at).toLocaleDateString('en-US')) };
+      return { client: q.customer_name, detail: (q.detail || '') + ' · ' + new Date(q.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }).toUpperCase(), total: money(q.total), status: st, badgeBg: badge(kind).bg, badgeFg: badge(kind).fg, btnBg: btn.bg, btnFg: btn.fg, btnLabel: btn.l, action: btn.a };
+    };
+    const iVM = (v) => {
+      const st = String(v.status || 'ready').toUpperCase();
+      const kind = st === 'PAID' ? 'ok' : st === 'UNPAID' ? 'warn' : 'n';
+      return { client: v.customer_name, detail: v.detail || '', total: money(v.total), status: st, badgeBg: badge(kind).bg, badgeFg: badge(kind).fg, btnBg: '#fff', btnFg: '#0E2419', btnLabel: 'Open', action: () => this.flash(v.customer_name + ' · ' + money(v.total)) };
+    };
+
+    const quotes = s.live ? s.dbQuotes.map(qVM) : [
       { client: 'Villa Rousseau', detail: 'WEEKLY MOWING + HEDGES · DRAFTED TODAY', total: '$275', status: 'DRAFT', badgeBg: badge('n').bg, badgeFg: badge('n').fg, btnBg: '#1F8A4C', btnFg: '#fff', btnLabel: 'Send', action: () => this.flash('Quote sent to Villa Rousseau for e-signature') },
       { client: 'Green Acres', detail: 'FULL MAINTENANCE · SENT 2 DAYS AGO', total: '$420', status: 'SENT', badgeBg: badge('warn').bg, badgeFg: badge('warn').fg, btnBg: '#fff', btnFg: '#0E2419', btnLabel: 'Remind', action: () => this.flash('Reminder sent to Green Acres') },
       { client: 'Maple Court', detail: 'LANDSCAPING · SIGNED YESTERDAY', total: '$1,180', status: 'SIGNED', badgeBg: badge('ok').bg, badgeFg: badge('ok').fg, btnBg: '#0E2419', btnFg: '#fff', btnLabel: 'Create property', action: () => this.flash('Property created from the signed quote') }
     ];
 
-    const invoices = [
+    const invoices = s.live ? s.dbInvoices.map(iVM) : [
       { client: 'Wilson Estate', detail: '4 VISITS IN AUGUST · AUTO-BUILT', total: '$1,120', status: 'READY', badgeBg: badge('n').bg, badgeFg: badge('n').fg, btnBg: '#1F8A4C', btnFg: '#fff', btnLabel: 'Send', action: () => this.flash('Invoice sent to Wilson Estate') },
       { client: 'Parker Residence', detail: 'SENT AUG 6 · DUE AUG 20', total: '$420', status: 'UNPAID', badgeBg: badge('warn').bg, badgeFg: badge('warn').fg, btnBg: '#fff', btnFg: '#0E2419', btnLabel: 'Remind', action: () => this.flash('Payment reminder sent to Parker Residence') },
       { client: 'Villa Johnson', detail: 'PAID AUG 4 · CARD', total: '$780', status: 'PAID', badgeBg: badge('ok').bg, badgeFg: badge('ok').fg, btnBg: '#fff', btnFg: '#0E2419', btnLabel: 'Receipt', action: () => this.flash('Receipt re-sent to Villa Johnson') },
@@ -911,7 +1018,7 @@ class Component extends DCLogic {
       goQuotes: this.go('quotes'),
       goInvoices: this.go('invoices'),
       goAnalytics: this.go('analytics'),
-      gardenCount: s.clients.length + 20,
+      gardenCount: s.live ? s.clients.length : s.clients.length + 20,
       crews: [
         { name: 'Crew 1 — James & Mike', meta: '8 PROPERTIES · 7H10', pct: '100%', status: 'ON TRACK', statusColor: '#166B3A' },
         { name: 'Crew 2 — Daniel & Tom', meta: '9 PROPERTIES · 7H35', pct: '78%', status: 'ON TRACK', statusColor: '#166B3A' },
@@ -929,7 +1036,7 @@ class Component extends DCLogic {
           return (c.name + ' ' + c.address + ' ' + c.city + ' ' + c.zip + ' ' + c.service).toLowerCase().indexOf(q) > -1;
         }),
       current: (() => {
-        const c = s.clients[s.currentId] || s.clients[0];
+        const c = s.clients[s.currentId] || s.clients[0] || { name: 'No customers yet', address: '', city: '', zip: '', billStatus: '', tasks: [] };
         const late = String(c.billStatus).indexOf('UNPAID') > -1;
         return Object.assign({}, c, {
           billBg: late ? 'rgba(232,162,61,0.16)' : 'rgba(31,138,76,0.12)',
@@ -938,6 +1045,22 @@ class Component extends DCLogic {
       })(),
       quotes: quotes,
       invoices: invoices,
+      live: s.live,
+      isDemo: !s.live,
+      companyName: s.live ? (s.company && s.company.name) || 'My company' : 'Halloran Lawn & Garden',
+      companyMeta: s.live ? s.clients.length + (s.clients.length === 1 ? ' CUSTOMER' : ' CUSTOMERS') : '3 CREWS · 24 PROPERTIES',
+      ownerName: (() => {
+        if (!s.live) return 'Mike Halloran';
+        const m = (s.user && s.user.user_metadata) || {};
+        return ((m.first_name || '') + ' ' + (m.last_name || '')).trim() || (s.user && s.user.email) || 'Owner';
+      })(),
+      ownerInitials: (() => {
+        const m = (s.user && s.user.user_metadata) || {};
+        const a = ((m.first_name || '')[0] || '') + ((m.last_name || '')[0] || '');
+        return (a || ((s.user && s.user.email) || 'F')[0]).toUpperCase();
+      })(),
+      ownerRole: 'OWNER',
+      logout: this.logout,
       showNewClient: s.showNewClient,
       showNewQuote: s.showNewQuote,
       toast: s.toast,
@@ -966,7 +1089,7 @@ class Component extends DCLogic {
       saveClient: this.saveClient,
       quoteClient: s.quoteClient,
       setQuoteClient: (e) => this.setState({ quoteClient: e.target.value }),
-      sendQuote: () => { this.setState({ showNewQuote: false, view: 'quotes' }); this.flash('Quote sent for e-signature'); }
+      sendQuote: () => { if (s.live && this.db) return this.saveQuoteLive(); this.setState({ showNewQuote: false, view: 'quotes' }); this.flash('Quote sent for e-signature'); }
     };
   }
 }

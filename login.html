@@ -47,6 +47,8 @@ if (!window.__fpPixel) { window.__fpPixel = true; fbq('init', '2178287276369092'
     [data-m~="card"] { padding:26px 18px 22px !important; border-radius:20px !important; }
   }
 </style>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="./fp-db.js?v=20261005c"></script>
 </helmet>
 
 <div style="position:fixed; inset:0; overflow:hidden; z-index:0" aria-hidden="true">
@@ -77,7 +79,7 @@ if (!window.__fpPixel) { window.__fpPixel = true; fbq('init', '2178287276369092'
         </div>
         <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:16px; font-size:13.5px">
           <button type="button" onClick="{{ toForgot }}" style="border:none; background:transparent; padding:0; font-size:13.5px; color:#166B3A; text-decoration:underline; cursor:pointer">I forgot my password</button>
-          <a href="./signup.html?v=20261005b" style="font-weight:600">Sign up</a>
+          <a href="./signup.html?v=20261005c" style="font-weight:600">Sign up</a>
         </div>
       </div>
     </sc-if>
@@ -113,12 +115,24 @@ class Component extends DCLogic {
     if (!s.password) return this.setState({ error: 'Enter your password.' });
     if (typeof window.gtag === 'function') window.gtag('event', 'login');
     this.setState({ loading: true, error: '' });
-    this._t = setTimeout(() => { window.location.href = './app.html?v=20261005b'; }, 700);
+    this.doLogin(s.email.trim(), s.password);
+  };
+
+  doLogin = async (email, password) => {
+    const db = window.getFPDB ? await window.getFPDB() : null;
+    if (!db) return this.setState({ loading: false, error: 'Connection problem — please try again.' });
+    const { error } = await db.auth.signInWithPassword({ email, password });
+    if (error) {
+      const msg = /invalid/i.test(error.message) ? 'Wrong email or password.' : /confirm/i.test(error.message) ? 'Confirm your email first — check your inbox.' : error.message;
+      return this.setState({ loading: false, error: msg });
+    }
+    window.location.href = './app.html?v=20261005c';
   };
 
   sendReset = () => {
     if (!this.validEmail(this.state.email)) return this.setState({ error: 'Enter a valid email address.' });
     this.setState({ resetSent: true, error: '' });
+    if (window.getFPDB) window.getFPDB().then(db => { if (db) db.auth.resetPasswordForEmail(this.state.email.trim(), { redirectTo: location.origin + '/login.html' }); });
   };
 
   componentWillUnmount() { clearTimeout(this._t); }

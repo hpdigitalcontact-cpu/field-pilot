@@ -49,6 +49,8 @@ if (!window.__fpPixel) { window.__fpPixel = true; fbq('init', '2178287276369092'
     [data-m~="title"] { font-size:26px !important; }
   }
 </style>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="./fp-db.js?v=20261005c"></script>
 </helmet>
 
 <div style="position:fixed; inset:0; overflow:hidden; z-index:0" aria-hidden="true">
@@ -111,7 +113,7 @@ if (!window.__fpPixel) { window.__fpPixel = true; fbq('init', '2178287276369092'
         </div>
 
         <p style="font-size:12.5px; color:#5C6B62; text-align:center; margin:14px 0 6px">By signing up, you accept our <a href="#">Terms of Service</a>.</p>
-        <p style="font-size:13.5px; text-align:center; margin:0"><a href="./login.html?v=20261005b" style="font-weight:600; text-decoration:underline">I already have an account</a></p>
+        <p style="font-size:13.5px; text-align:center; margin:0"><a href="./login.html?v=20261005c" style="font-weight:600; text-decoration:underline">I already have an account</a></p>
       </div>
     </sc-if>
 
@@ -146,10 +148,30 @@ class Component extends DCLogic {
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(s.email.trim())) return this.setState({ error: 'Enter a valid email address.' });
     if (s.password.length < 8) return this.setState({ error: 'Password needs at least 8 characters.' });
     if (!s.size) return this.setState({ error: 'Tell us how many gardeners you are.' });
+    this.createAccount(s);
+  };
+
+  createAccount = async (s) => {
+    this.setState({ error: 'Creating your workspace…' });
+    const db = window.getFPDB ? await window.getFPDB() : null;
+    if (!db) return this.setState({ error: 'Connection problem — please try again.' });
+    const { data, error } = await db.auth.signUp({
+      email: s.email.trim(),
+      password: s.password,
+      options: {
+        data: { company: s.company.trim(), team_size: s.size, first_name: s.firstName.trim(), last_name: s.lastName.trim(), phone: (s.dial + ' ' + s.phone).trim(), heard: s.heard },
+        emailRedirectTo: location.origin + '/app.html'
+      }
+    });
+    if (error) {
+      const msg = /registered|exists/i.test(error.message) ? 'An account already exists with this email — log in instead.' : error.message;
+      return this.setState({ error: msg });
+    }
     if (typeof window.gtag === 'function') window.gtag('event', 'signup_complete', { team_size: s.size, source: s.heard || 'none' });
     if (typeof window.fbq === 'function') window.fbq('track', 'Lead', { content_name: 'workspace created' });
+    if (!data.session) return this.setState({ error: 'Almost there — confirm your email from the link we just sent, then log in.' });
     this.setState({ done: true, error: '' });
-    this._t = setTimeout(() => { window.location.href = './app.html?v=20261005b'; }, 1600);
+    this._t = setTimeout(() => { window.location.href = './app.html?v=20261005c'; }, 1400);
   };
 
   componentWillUnmount() { clearTimeout(this._t); }
