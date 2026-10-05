@@ -30,7 +30,7 @@
   gtag('js', new Date());
   gtag('config', 'G-TPCXXB6W73');
 </script>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"Field Pilot","applicationCategory":"BusinessApplication","applicationSubCategory":"Lawn care software","operatingSystem":"Web, iOS, Android","url":"https://field-pilot.co/","description":"Simple lawn care software for scheduling, routes, crews, quotes and invoices, built for lawn care and landscaping businesses.","offers":[{"@type":"Offer","name":"Starter","price":"49","priceCurrency":"USD"},{"@type":"Offer","name":"Team","price":"99","priceCurrency":"USD"},{"@type":"Offer","name":"Business","price":"199","priceCurrency":"USD"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Who is Field Pilot built for?","acceptedAnswer":{"@type":"Answer","text":"Owner-operated lawn care and landscaping companies in the US, from a solo crew to ten. Not plumbers, not cleaners — which is why there's nothing on screen you don't use."}},{"@type":"Question","name":"Can it handle recurring jobs and multiple crews?","acceptedAnswer":{"@type":"Answer","text":"Yes. Set a property to weekly, bi-weekly or monthly and the visits generate themselves. Assign each crew its own route, and see all crews side by side for the day."}},{"@type":"Question","name":"Is the lawn care app really free for my crew?","acceptedAnswer":{"@type":"Answer","text":"Yes. You pay for your plan; every crew member you invite gets the iOS or Android app at no cost, however many you have."}},{"@type":"Question","name":"My crew isn't good with technology.","acceptedAnswer":{"@type":"Answer","text":"One button in the morning, tick the tasks, take photos. No menus, no training session — most crews are running it the same day."}},{"@type":"Question","name":"What if there's no signal at the property?","acceptedAnswer":{"@type":"Answer","text":"The app works offline. Tasks, photos and timings sync to your back office the moment the truck gets signal again."}},{"@type":"Question","name":"How long until I'm actually running on it?","acceptedAnswer":{"@type":"Answer","text":"Add your customers and crews and your first route is scheduled in under 10 minutes. Recurring visits then generate themselves."}},{"@type":"Question","name":"Do I still need accounting software?","acceptedAnswer":{"@type":"Answer","text":"For quotes, invoices and getting paid, no — Field Pilot handles it from completed visits. Your accountant still gets clean exports at year end."}},{"@type":"Question","name":"What is lawn care software?","acceptedAnswer":{"@type":"Answer","text":"It's the software a lawn care or landscaping business runs on: scheduling recurring jobs, planning crew routes, keeping customer and property records, and sending quotes and invoices — instead of juggling texts, paper and spreadsheets."}}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"Field Pilot","applicationCategory":"BusinessApplication","applicationSubCategory":"Lawn care software","operatingSystem":"Web, iOS, Android","url":"https://field-pilot.co/","description":"Simple lawn care software for scheduling, routes, crews, quotes and invoices, built for lawn care and landscaping businesses.","offers":[{"@type":"Offer","name":"Solo Free","price":"0","priceCurrency":"USD"},{"@type":"Offer","name":"Solo Plus","price":"29","priceCurrency":"USD"},{"@type":"Offer","name":"Team","price":"69","priceCurrency":"USD"},{"@type":"Offer","name":"Business","price":"99","priceCurrency":"USD"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Who is Field Pilot built for?","acceptedAnswer":{"@type":"Answer","text":"Owner-operated lawn care and landscaping companies in the US, from a solo crew to ten. Not plumbers, not cleaners — which is why there's nothing on screen you don't use."}},{"@type":"Question","name":"Can it handle recurring jobs and multiple crews?","acceptedAnswer":{"@type":"Answer","text":"Yes. Set a property to weekly, bi-weekly or monthly and the visits generate themselves. Assign each crew its own route, and see all crews side by side for the day."}},{"@type":"Question","name":"Is the lawn care app really free for my crew?","acceptedAnswer":{"@type":"Answer","text":"Yes. You pay for your plan; every crew member you invite gets the iOS or Android app at no cost, however many you have."}},{"@type":"Question","name":"My crew isn't good with technology.","acceptedAnswer":{"@type":"Answer","text":"One button in the morning, tick the tasks, take photos. No menus, no training session — most crews are running it the same day."}},{"@type":"Question","name":"What if there's no signal at the property?","acceptedAnswer":{"@type":"Answer","text":"The app works offline. Tasks, photos and timings sync to your back office the moment the truck gets signal again."}},{"@type":"Question","name":"How long until I'm actually running on it?","acceptedAnswer":{"@type":"Answer","text":"Add your customers and crews and your first route is scheduled in under 10 minutes. Recurring visits then generate themselves."}},{"@type":"Question","name":"Do I still need accounting software?","acceptedAnswer":{"@type":"Answer","text":"For quotes, invoices and getting paid, no — Field Pilot handles it from completed visits. Your accountant still gets clean exports at year end."}},{"@type":"Question","name":"What is lawn care software?","acceptedAnswer":{"@type":"Answer","text":"It's the software a lawn care or landscaping business runs on: scheduling recurring jobs, planning crew routes, keeping customer and property records, and sending quotes and invoices — instead of juggling texts, paper and spreadsheets."}}]}]}</script>
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
 if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
@@ -60,6 +60,9 @@ if (!window.__fpPixel) { window.__fpPixel = true; fbq('init', '2178287276369092'
 
   section[id] { scroll-margin-top:80px; }
 
+  @media (min-width: 821px) and (max-width: 1100px) {
+    [data-m~="pgrid"] { grid-template-columns:repeat(2,minmax(0,1fr)) !important; }
+  }
   @media (max-width: 1050px) {
     [data-m~="navlinks"] { display:none !important; }
   }
@@ -85,8 +88,10 @@ if (!window.__fpPixel) { window.__fpPixel = true; fbq('init', '2178287276369092'
     [data-m~="hero"] p { font-size:15.5px !important; }
     [data-m~="row"] h3 { font-size:20px !important; margin:10px 0 !important; }
     [data-m~="lead"] { font-size:15px !important; margin-top:10px !important; }
-    [data-m~="herostats"] { gap:0 !important; margin-top:20px !important; padding-top:18px !important; justify-content:space-between !important; }
-    [data-m~="herostats"] > div { flex:1; }
+    [data-m~="herostats"] { gap:8px !important; margin-top:20px !important; padding-top:0 !important; border-top:none !important; }
+    [data-m~="herostats"] > div { min-width:0; background:#fff; border:1px solid #E3E8E1; border-radius:12px; padding:13px 10px 12px; box-shadow:0 1px 2px rgba(14,36,25,0.04); }
+    [data-m~="herostats"] > div > div:first-child { font-size:17px !important; letter-spacing:-0.02em; white-space:nowrap; line-height:1.15; }
+    [data-m~="herostats"] > div > div:last-child { font-size:9.5px !important; letter-spacing:.03em !important; line-height:1.35; margin-top:5px; }
     [data-m~="heromock"] { height:auto !important; }
     [data-m~="glow"] { width:200px !important; height:200px !important; }
     [data-m~="mockmain"] { position:static !important; max-width:none !important; width:100% !important; }
@@ -107,6 +112,31 @@ if (!window.__fpPixel) { window.__fpPixel = true; fbq('init', '2178287276369092'
     [data-m~="hscrollcard"] > * { background:#fff !important; border:1px solid #E3E8E1 !important; border-radius:16px !important; padding:20px !important; }
 
     [data-m~="chapter"] { padding-top:13px !important; margin-bottom:13px !important; }
+    [data-m~="tstats"] { display:grid !important; grid-template-columns:repeat(3,minmax(0,1fr)) !important; gap:8px !important; margin-bottom:18px !important; }
+    [data-m~="tstats"] > * { min-width:0 !important; padding:14px 10px !important; }
+    [data-m~="tstats"] [data-m~="fs44"] { font-size:22px !important; }
+    [data-m~="tstats"] > * > div:last-child { font-size:9.5px !important; letter-spacing:.03em !important; line-height:1.35 !important; margin-top:6px !important; }
+    [data-m~="tcar"] { align-items:stretch !important; margin-bottom:14px !important; }
+    [data-m~="tcar"] > [data-m~="pad38"], [data-m~="tcar"] [data-m~="stories2"] > * { flex:0 0 86% !important; width:86% !important; min-width:0 !important; padding:22px !important; display:flex !important; flex-direction:column !important; box-shadow:none !important; }
+    [data-m~="tcar"] [data-m~="fs26"] { font-size:19px !important; line-height:1.3 !important; margin:14px 0 18px !important; }
+    [data-m~="tcar"] p { font-size:15.5px !important; margin:12px 0 18px !important; }
+    [data-m~="tsec"] { display:none !important; }
+    [data-m~="tauth"] { margin-top:auto !important; }
+    [data-m~="tswipe"] { display:flex !important; }
+    [data-m~="burger"] { display:flex !important; }
+    [data-m~="pband"] { background:transparent !important; padding:0 !important; border-radius:0 !important; }
+    [data-m~="pgrid"] > * { flex:0 0 84% !important; width:84% !important; min-width:0 !important; border:1px solid #E3E8E1; padding-top:30px !important; }
+    [data-m~="pgrid"] { padding-top:16px !important; }
+    [data-m~="pchecks"] { gap:8px 16px !important; font-size:13px !important; }
+    [data-m~="pbdesk"] { display:none !important; }
+    [data-m~="pbmob"] { display:block !important; }
+    [data-m~="pbgrid"] { display:none !important; }
+    [data-m~="aftermock"] { margin:0 !important; }
+    [data-m~="featline"] { gap:6px !important; font-size:9px !important; letter-spacing:.02em !important; justify-content:space-between !important; }
+    [data-m~="tnote"] { margin:-6px 0 22px !important; }
+    [data-m~="tchips"] { flex-direction:column !important; align-items:flex-start !important; gap:0 !important; font-size:11px !important; border-top:1px solid #E3E8E1; }
+    [data-m~="tchips"] > span { background:none !important; border:none !important; border-radius:0 !important; padding:11px 0 !important; width:100%; border-bottom:1px solid #E3E8E1 !important; }
+    [data-m~="tchips"] > span::before { content:"✓"; color:#1F8A4C; margin-right:10px; }
     [data-m~="tabshot"] { order:-1; margin-bottom:20px; }
     [data-m~="tablist"] { gap:7px !important; }
     [data-m~="tabgroup"] { margin:10px 0 1px !important; }
@@ -136,10 +166,41 @@ if (!window.__fpPixel) { window.__fpPixel = true; fbq('init', '2178287276369092'
     </div>
     <div style="display:flex; align-items:center; gap:14px">
       <a href="#pricing" data-m="hide-mobile" style="display:inline-flex; align-items:center; justify-content:center; font-weight:600; font-size:15px; padding:13px 22px; border-radius:10px; border:1px solid #E3E8E1; background:transparent; color:#0E2419; white-space:nowrap; transition:border-color .15s ease" style-hover="border-color:#0E2419; color:#0E2419">Log in</a>
-      <a href="./signup.html" style="display:inline-flex; align-items:center; justify-content:center; font-weight:600; font-size:15px; padding:13px 22px; border-radius:10px; border:1px solid transparent; background:#0E2419; color:#fff; white-space:nowrap; transition:transform .15s ease, box-shadow .15s ease" style-hover="transform:translateY(-1px); box-shadow:0 8px 20px rgba(14,36,25,0.18); color:#fff">Start free</a>
+      <a href="./signup.html" style="display:inline-flex; align-items:center; justify-content:center; font-weight:600; font-size:15px; padding:13px 22px; border-radius:10px; border:1px solid transparent; background:#0E2419; color:#fff; white-space:nowrap; transition:transform .15s ease, box-shadow .15s ease" style-hover="transform:translateY(-1px); box-shadow:0 8px 20px rgba(14,36,25,0.18); color:#fff">Try for free</a>
+      <button type="button" data-m="burger" onClick="{{ openMenu }}" aria-label="Open menu" style="display:none; width:44px; height:44px; border-radius:10px; border:1px solid #E3E8E1; background:#fff; cursor:pointer; align-items:center; justify-content:center; flex-direction:column; gap:4px; padding:0">
+        <span style="display:block; width:18px; height:2px; border-radius:2px; background:#0E2419"></span>
+        <span style="display:block; width:18px; height:2px; border-radius:2px; background:#0E2419"></span>
+        <span style="display:block; width:12px; height:2px; border-radius:2px; background:#0E2419; margin-left:6px"></span>
+      </button>
     </div>
   </nav>
 </header>
+
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ closeMenu }}" style="position:fixed; inset:0; z-index:90; background:rgba(14,36,25,0.45)"></div>
+  <aside aria-label="Menu" style="position:fixed; top:0; right:0; bottom:0; z-index:91; width:min(84vw,340px); background:#F6F7F2; box-shadow:-20px 0 50px rgba(14,36,25,0.25); display:flex; flex-direction:column; padding:18px 20px 24px">
+    <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:26px">
+      <span style="display:flex; align-items:center; gap:9px; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:18px; letter-spacing:-0.01em; color:#0E2419">
+        <span style="width:28px; height:28px; border-radius:8px; background:#1F8A4C; display:flex; align-items:center; justify-content:center">
+          <svg viewBox="6 3 20 26" style="width:12px; height:16px"><rect x="9" y="5" width="5.6" height="22" rx="2.8" fill="#fff"></rect><rect x="9" y="5" width="15" height="5.6" rx="2.8" fill="#fff"></rect><rect x="9" y="13.2" width="11" height="5.6" rx="2.8" fill="#8FD14F"></rect></svg>
+        </span>
+        Field Pilot
+      </span>
+      <button type="button" onClick="{{ closeMenu }}" aria-label="Close menu" style="width:44px; height:44px; border-radius:10px; border:1px solid #E3E8E1; background:#fff; cursor:pointer; font-size:20px; line-height:1; color:#0E2419">×</button>
+    </div>
+    <nav style="display:flex; flex-direction:column">
+      <a href="#product" onClick="{{ closeMenu }}" style="display:flex; align-items:center; justify-content:space-between; padding:17px 4px; border-top:1px solid #E3E8E1; font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:20px; letter-spacing:-0.01em; color:#0E2419">Product<span style="font-family:'IBM Plex Mono',monospace; font-size:14px; color:#1F8A4C">→</span></a>
+      <a href="#stories" onClick="{{ closeMenu }}" style="display:flex; align-items:center; justify-content:space-between; padding:17px 4px; border-top:1px solid #E3E8E1; font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:20px; letter-spacing:-0.01em; color:#0E2419">Results<span style="font-family:'IBM Plex Mono',monospace; font-size:14px; color:#1F8A4C">→</span></a>
+      <a href="#mobile" onClick="{{ closeMenu }}" style="display:flex; align-items:center; justify-content:space-between; padding:17px 4px; border-top:1px solid #E3E8E1; font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:20px; letter-spacing:-0.01em; color:#0E2419">Free mobile app<span style="font-family:'IBM Plex Mono',monospace; font-size:14px; color:#1F8A4C">→</span></a>
+      <a href="#pricing" onClick="{{ closeMenu }}" style="display:flex; align-items:center; justify-content:space-between; padding:17px 4px; border-top:1px solid #E3E8E1; border-bottom:1px solid #E3E8E1; font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:20px; letter-spacing:-0.01em; color:#0E2419">Pricing<span style="font-family:'IBM Plex Mono',monospace; font-size:14px; color:#1F8A4C">→</span></a>
+    </nav>
+    <div style="margin-top:auto; display:flex; flex-direction:column; gap:10px">
+      <a href="./signup.html" style="display:flex; align-items:center; justify-content:center; padding:15px; border-radius:10px; background:#0E2419; color:#fff; font-weight:600; font-size:15.5px">Try for free</a>
+      <a href="./app.html" style="display:flex; align-items:center; justify-content:center; padding:15px; border-radius:10px; border:1px solid #E3E8E1; background:#fff; color:#0E2419; font-weight:600; font-size:15.5px">Log in</a>
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:#5C6B62; text-align:center; margin-top:4px">No credit card · free crew app</div>
+    </div>
+  </aside>
+</sc-if>
 
 <main id="top">
   <section data-m="hero" style="padding:88px 0 60px; overflow:hidden">
@@ -152,24 +213,24 @@ if (!window.__fpPixel) { window.__fpPixel = true; fbq('init', '2178287276369092'
         <h1 style="font-family:'Space Grotesk',sans-serif; font-weight:600; letter-spacing:-0.02em; line-height:1.08; font-size:clamp(34px,4.4vw,54px); margin:18px 0 20px; text-wrap:pretty">The simple lawn care software <span style="color:#166B3A">built to grow your business.</span></h1>
         <p style="font-size:18px; color:#5C6B62; max-width:480px; margin:0 0 30px; text-wrap:pretty">Schedule jobs, plan routes, manage your crew, send quotes and automate invoices — everything you need to run your lawn care or landscaping business in one simple app. Free on iOS &amp; Android for your crew.</p>
         <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap">
-          <a href="./signup.html" style="display:inline-flex; align-items:center; justify-content:center; font-weight:600; font-size:15px; padding:13px 22px; border-radius:10px; background:#0E2419; color:#fff; border:1px solid transparent; transition:transform .15s ease, box-shadow .15s ease" style-hover="transform:translateY(-1px); box-shadow:0 8px 20px rgba(14,36,25,0.18); color:#fff">Start free — no credit card required</a>
+          <a href="./signup.html" style="display:inline-flex; align-items:center; justify-content:center; font-weight:600; font-size:15px; padding:13px 22px; border-radius:10px; background:#0E2419; color:#fff; border:1px solid transparent; transition:transform .15s ease, box-shadow .15s ease" style-hover="transform:translateY(-1px); box-shadow:0 8px 20px rgba(14,36,25,0.18); color:#fff">Try for free — no credit card required</a>
           <a href="#product" style="display:inline-flex; align-items:center; justify-content:center; font-weight:600; font-size:15px; padding:13px 22px; border-radius:10px; background:transparent; color:#0E2419; border:1px solid #E3E8E1; transition:border-color .15s ease" style-hover="border-color:#0E2419; color:#0E2419">See how it works</a>
         </div>
-        <div style="margin-top:14px; font-size:13px; color:#5C6B62; font-family:'IBM Plex Mono',monospace">free app for your crew · iOS &amp; android · first route in under 10 min</div>
-        <div data-m="herostats" style="margin-top:26px; padding-top:22px; border-top:1px solid #E3E8E1; display:flex; gap:32px; flex-wrap:wrap">
+        <div data-m="herostats" style="margin-top:26px; padding-top:22px; border-top:1px solid #E3E8E1; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px">
           <div>
-            <div style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:22px">×2.5</div>
-            <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:#5C6B62">annual revenue</div>
+            <div style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:22px">×2.15<span style="color:#1F8A4C">*</span></div>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:#5C6B62">annual revenue, on average</div>
           </div>
           <div>
-            <div style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:22px">+2 crews</div>
-            <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:#5C6B62">without more admin</div>
+            <div style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:22px">≈ +2 crews</div>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:#5C6B62">of output, no new hires</div>
           </div>
           <div>
             <div style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:22px">0 evenings</div>
             <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:#5C6B62">spent on paperwork</div>
           </div>
         </div>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.04em; color:#5C6B62; margin-top:10px">*Average across Field Pilot customers after two seasons.</div>
       </div>
 
       <div data-m="heromock" style="position:relative">
@@ -179,7 +240,7 @@ if (!window.__fpPixel) { window.__fpPixel = true; fbq('init', '2178287276369092'
             <iframe src="https://www.youtube.com/embed/rmIa_YhzrJs?rel=0&amp;playsinline=1" title="Field Pilot product demo" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="true" style="position:absolute; inset:0; width:100%; height:100%; border:0; background:#0E2419"></iframe>
           </div>
         </div>
-        <div style="display:flex; align-items:center; gap:18px; flex-wrap:wrap; margin-top:16px; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:#5C6B62">
+        <div data-m="featline" style="display:flex; align-items:center; justify-content:center; gap:14px; flex-wrap:nowrap; white-space:nowrap; margin-top:16px; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:#5C6B62">
           <span>Scheduling</span><span style="color:#DCE6DA">/</span><span>Routes</span><span style="color:#DCE6DA">/</span><span>Quotes &amp; invoices</span><span style="color:#DCE6DA">/</span><span>Free crew app</span>
         </div>
       </div>
@@ -193,8 +254,121 @@ if (!window.__fpPixel) { window.__fpPixel = true; fbq('init', '2178287276369092'
         <div data-m="chapter" style="display:flex; align-items:center; justify-content:space-between; gap:16px; border-top:1px solid #E3E8E1; padding-top:16px; margin-bottom:16px"><span style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#166B3A; font-weight:600">The problem</span><span data-m="chapnum" style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.08em; color:#5C6B62">01 / 06</span></div>
         <h2 style="font-family:'Space Grotesk',sans-serif; font-weight:600; letter-spacing:-0.02em; line-height:1.08; font-size:clamp(26px,3.2vw,38px); margin-top:14px">Still running your lawn care business like this?</h2>
       </div>
-      <div data-m="grid" style="display:grid; grid-template-columns:1fr auto 1fr; gap:28px; align-items:center">
-        <div style="display:flex; flex-direction:column; gap:14px">
+      <div data-m="pbmob" style="display:none">
+        <div style="background:#F6F7F2; border:1px dashed #DCE6DA; border-radius:16px; padding:16px 16px 6px">
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:6px">
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.08em; text-transform:uppercase; font-weight:600; color:#C24545">Before</span>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:#5C6B62">the old way</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:12px; padding:12px 0; border-top:1px solid #E3E8E1">
+            <span style="width:22px; height:22px; border-radius:50%; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-family:'IBM Plex Mono',monospace; font-size:10.5px; font-weight:600; background:rgba(194,69,69,0.10); color:#C24545">1</span>
+            <span style="flex:1; min-width:0; font-size:14.5px; line-height:1.35; color:#5C6B62">"Did you do the Smith property today?"</span>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:.06em; font-weight:600; color:#C24545; flex-shrink:0">WHATSAPP</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:12px; padding:12px 0; border-top:1px solid #E3E8E1">
+            <span style="width:22px; height:22px; border-radius:50%; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-family:'IBM Plex Mono',monospace; font-size:10.5px; font-weight:600; background:rgba(194,69,69,0.10); color:#C24545">2</span>
+            <span style="flex:1; min-width:0; font-size:14.5px; line-height:1.35; color:#5C6B62">Weekly routes tracked by hand</span>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:.06em; font-weight:600; color:#C24545; flex-shrink:0">PAPER</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:12px; padding:12px 0; border-top:1px solid #E3E8E1">
+            <span style="width:22px; height:22px; border-radius:50%; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-family:'IBM Plex Mono',monospace; font-size:10.5px; font-weight:600; background:rgba(194,69,69,0.10); color:#C24545">3</span>
+            <span style="flex:1; min-width:0; font-size:14.5px; line-height:1.35; color:#5C6B62">Quotes &amp; invoices done on Sunday night</span>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:.06em; font-weight:600; color:#C24545; flex-shrink:0">EXCEL</span>
+          </div>
+        </div>
+        <div style="display:flex; justify-content:center; margin:-10px 0; position:relative; z-index:1">
+          <span style="width:34px; height:34px; border-radius:50%; background:#1F8A4C; color:#fff; display:flex; align-items:center; justify-content:center; font-size:17px; box-shadow:0 0 0 5px #fff">↓</span>
+        </div>
+        <div style="background:#163C2A; border-radius:16px; padding:16px 16px 6px">
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:6px">
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.08em; text-transform:uppercase; font-weight:600; color:#8FD14F">After · Field Pilot</span>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:rgba(255,255,255,0.6)">one app</span>
+          </div>
+          <div style="margin:8px 0 14px"><div data-m="heromock aftermock" style="position:relative; height:430px; z-index:1">
+            
+            <div data-m="mockmain" style="position:absolute; top:0; left:0; width:100%; max-width:400px; z-index:1; padding:22px; background:#fff; border:1px solid #E3E8E1; border-radius:16px; box-shadow:0 1px 2px rgba(14,36,25,0.04), 0 8px 24px rgba(14,36,25,0.06)">
+              <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:4px">
+                <span style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:17px">Monday</span>
+                <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#5C6B62">Aug 10</span>
+              </div>
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:#5C6B62; margin-bottom:18px">3 crews · 24 properties</div>
+
+              <div style="display:flex; align-items:center; justify-content:space-between; gap:10px; padding:12px 0">
+                <div>
+                  <div style="font-size:14px; font-weight:600">Crew 1 — James &amp; Mike</div>
+                  <div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#5C6B62; margin-top:2px">8 properties · 7h10</div>
+                </div>
+                <div style="flex:1; max-width:90px; height:6px; background:#DCE6DA; border-radius:4px; overflow:hidden">
+                  <div style="height:100%; width:100%; background:#1F8A4C; border-radius:4px; transform-origin:left; animation:ypGrow 1.2s cubic-bezier(.4,0,.2,1) .25s both"></div>
+                </div>
+                <div style="width:9px; height:9px; border-radius:50%; background:#1F8A4C; flex-shrink:0; box-shadow:0 0 0 3px rgba(31,138,76,0.15)"></div>
+              </div>
+              <div style="display:flex; align-items:center; justify-content:space-between; gap:10px; padding:12px 0; border-top:1px solid #E3E8E1">
+                <div>
+                  <div style="font-size:14px; font-weight:600">Crew 2 — Daniel &amp; Tom</div>
+                  <div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#5C6B62; margin-top:2px">9 properties · 7h35</div>
+                </div>
+                <div style="flex:1; max-width:90px; height:6px; background:#DCE6DA; border-radius:4px; overflow:hidden">
+                  <div style="height:100%; width:78%; background:#1F8A4C; border-radius:4px; transform-origin:left; animation:ypGrow 1.2s cubic-bezier(.4,0,.2,1) .43s both"></div>
+                </div>
+                <div style="width:9px; height:9px; border-radius:50%; background:#1F8A4C; flex-shrink:0; box-shadow:0 0 0 3px rgba(31,138,76,0.15)"></div>
+              </div>
+              <div style="display:flex; align-items:center; justify-content:space-between; gap:10px; padding:12px 0; border-top:1px solid #E3E8E1">
+                <div>
+                  <div style="font-size:14px; font-weight:600">Crew 3 — Chris &amp; Alex</div>
+                  <div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#5C6B62; margin-top:2px">7 properties · 1 delayed</div>
+                </div>
+                <div style="flex:1; max-width:90px; height:6px; background:#DCE6DA; border-radius:4px; overflow:hidden">
+                  <div style="height:100%; width:45%; background:#1F8A4C; border-radius:4px; transform-origin:left; animation:ypGrow 1.2s cubic-bezier(.4,0,.2,1) .61s both"></div>
+                </div>
+                <div style="width:9px; height:9px; border-radius:50%; background:#E8A23D; flex-shrink:0; box-shadow:0 0 0 3px rgba(232,162,61,0.18)"></div>
+              </div>
+            </div>
+
+            <div data-m="mockmini" style="position:absolute; right:0; bottom:0; width:208px; z-index:2; padding:16px 16px 20px; background:#fff; border:1px solid #E3E8E1; border-radius:16px; box-shadow:0 20px 44px rgba(14,36,25,0.16), 0 2px 8px rgba(14,36,25,0.08)">
+              <div style="font-size:13px; font-weight:700; margin-bottom:2px">Villa Smith</div>
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:#5C6B62; margin-bottom:14px">Gate code · 4932</div>
+              <div style="display:flex; align-items:center; gap:9px; padding:7px 0; font-size:12.5px">
+                <div style="width:15px; height:15px; border-radius:5px; border:1.6px solid #DCE6DA; flex-shrink:0; display:flex; align-items:center; justify-content:center; transition:all .3s ease; background:{{ h0.bg }}; border-color:{{ h0.brd }}">
+                  <svg viewBox="0 0 24 24" fill="none" style="width:9px; height:9px; opacity:{{ h0.chk }}"><path d="M4 12l5 5L20 6" stroke="white" stroke-width="3" stroke-linecap="round"></path></svg>
+                </div>
+                <span style="transition:color .3s ease; color:{{ h0.col }}; text-decoration:{{ h0.dec }}">Mow lawn</span>
+              </div>
+              <div style="display:flex; align-items:center; gap:9px; padding:7px 0; font-size:12.5px">
+                <div style="width:15px; height:15px; border-radius:5px; border:1.6px solid #DCE6DA; flex-shrink:0; display:flex; align-items:center; justify-content:center; transition:all .3s ease; background:{{ h1.bg }}; border-color:{{ h1.brd }}">
+                  <svg viewBox="0 0 24 24" fill="none" style="width:9px; height:9px; opacity:{{ h1.chk }}"><path d="M4 12l5 5L20 6" stroke="white" stroke-width="3" stroke-linecap="round"></path></svg>
+                </div>
+                <span style="transition:color .3s ease; color:{{ h1.col }}; text-decoration:{{ h1.dec }}">Trim hedges</span>
+              </div>
+              <div style="display:flex; align-items:center; gap:9px; padding:7px 0; font-size:12.5px">
+                <div style="width:15px; height:15px; border-radius:5px; border:1.6px solid #DCE6DA; flex-shrink:0; display:flex; align-items:center; justify-content:center; transition:all .3s ease; background:{{ h2.bg }}; border-color:{{ h2.brd }}">
+                  <svg viewBox="0 0 24 24" fill="none" style="width:9px; height:9px; opacity:{{ h2.chk }}"><path d="M4 12l5 5L20 6" stroke="white" stroke-width="3" stroke-linecap="round"></path></svg>
+                </div>
+                <span style="transition:color .3s ease; color:{{ h2.col }}; text-decoration:{{ h2.dec }}">Check irrigation</span>
+              </div>
+              <div style="margin-top:12px; display:flex; align-items:center; gap:7px; font-family:'IBM Plex Mono',monospace; font-size:10.5px; background:#F6F7F2; border:1px solid #E3E8E1; border-radius:8px; padding:7px 9px; transition:opacity .4s ease, transform .4s ease; opacity:{{ chip.opacity }}; transform:{{ chip.transform }}">4 photos added</div>
+            </div>
+          </div></div>
+          <div style="display:flex; align-items:center; gap:12px; padding:12px 0; border-top:1px solid rgba(255,255,255,0.12)">
+            <span style="width:22px; height:22px; border-radius:50%; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-family:'IBM Plex Mono',monospace; font-size:10.5px; font-weight:600; background:rgba(143,209,79,0.18); color:#8FD14F">1</span>
+            <span style="flex:1; min-width:0; font-size:14.5px; line-height:1.35; color:#fff">Crew checks off the Smith property — you see it live, with photos</span>
+            
+          </div>
+          <div style="display:flex; align-items:center; gap:12px; padding:12px 0; border-top:1px solid rgba(255,255,255,0.12)">
+            <span style="width:22px; height:22px; border-radius:50%; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-family:'IBM Plex Mono',monospace; font-size:10.5px; font-weight:600; background:rgba(143,209,79,0.18); color:#8FD14F">2</span>
+            <span style="flex:1; min-width:0; font-size:14.5px; line-height:1.35; color:#fff">Routes built and put in order for every crew</span>
+            
+          </div>
+          <div style="display:flex; align-items:center; gap:12px; padding:12px 0; border-top:1px solid rgba(255,255,255,0.12)">
+            <span style="width:22px; height:22px; border-radius:50%; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-family:'IBM Plex Mono',monospace; font-size:10.5px; font-weight:600; background:rgba(143,209,79,0.18); color:#8FD14F">3</span>
+            <span style="flex:1; min-width:0; font-size:14.5px; line-height:1.35; color:#fff">Quotes &amp; invoices go out on their own</span>
+            
+          </div>
+        </div>
+        <div style="display:flex; align-items:center; justify-content:center; margin-top:16px; font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:.02em; text-transform:uppercase; color:#166B3A; font-weight:600; white-space:nowrap">Built &amp; optimized for lawn care pros · set up in 10 min</div>
+      </div>
+      <div data-m="grid pbgrid" style="display:grid; grid-template-columns:1fr auto 1fr; gap:28px; align-items:center">
+        <div data-m="pbdesk" style="display:flex; flex-direction:column; gap:14px">
           <div style="background:#F6F7F2; border:1px dashed #E3E8E1; border-radius:12px; padding:16px 18px; display:flex; align-items:center; justify-content:space-between; gap:12px; font-size:14px; color:#5C6B62"><span>"Did you do the Smith property today?"</span><span style="color:#C24545; font-weight:700; font-family:'IBM Plex Mono',monospace; font-size:13px">WHATSAPP</span></div>
           <div style="background:#F6F7F2; border:1px dashed #E3E8E1; border-radius:12px; padding:16px 18px; display:flex; align-items:center; justify-content:space-between; gap:12px; font-size:14px; color:#5C6B62"><span>Weekly routes tracked by hand</span><span style="color:#C24545; font-weight:700; font-family:'IBM Plex Mono',monospace; font-size:13px">PAPER</span></div>
           <div style="background:#F6F7F2; border:1px dashed #E3E8E1; border-radius:12px; padding:16px 18px; display:flex; align-items:center; justify-content:space-between; gap:12px; font-size:14px; color:#5C6B62"><span>Crew list in 6 different tabs</span><span style="color:#C24545; font-weight:700; font-family:'IBM Plex Mono',monospace; font-size:13px">EXCEL</span></div>
@@ -270,7 +444,7 @@ if (!window.__fpPixel) { window.__fpPixel = true; fbq('init', '2178287276369092'
         </div>
       </div>
 
-      <div data-m="grid hscroll" data-reveal style="display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-top:34px">
+      <div data-m="grid hscroll pbdesk" data-reveal style="display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-top:34px">
         <div data-m="pad28" style="border-radius:16px; padding:26px; border:1px solid #E3E8E1; background:#F6F7F2">
           <h3 style="font-family:'IBM Plex Mono',monospace; font-size:12px; text-transform:uppercase; letter-spacing:.05em; margin:0 0 14px; color:#5C6B62; font-weight:600">General field-service software</h3>
           <ul style="list-style:none; padding:0; margin:0">
@@ -388,23 +562,6 @@ if (!window.__fpPixel) { window.__fpPixel = true; fbq('init', '2178287276369092'
           </div>
         </div>
       </div>
-
-      <div data-m="pad30" data-reveal style="background:#163C2A; color:#fff; border-radius:16px; padding:34px; margin-top:34px">
-        <div data-m="grid" style="display:grid; grid-template-columns:1fr 1fr; gap:34px; align-items:center">
-          <div>
-            <div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; color:#8FD14F; font-weight:600">Your business shouldn't follow you home</div>
-            <p data-m="fs26" style="font-family:'Space Grotesk',sans-serif; font-weight:600; letter-spacing:-0.02em; line-height:1.2; font-size:24px; margin:14px 0 12px; text-wrap:pretty">The quote in your sent email, the invoice in a folder, who paid in your head until Sunday night — all of it, in one app.</p>
-            <p style="color:rgba(255,255,255,0.7); font-size:15px; margin:0">Crew finishes at 2:41pm → the invoice line is added → it goes out at month end → paid online, reminders on their own.</p>
-          </div>
-          <div style="display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; background:rgba(255,255,255,0.06); border-radius:14px; padding:22px 24px">
-            <div>
-              <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:rgba(255,255,255,0.6)">Your evening input</div>
-              <div style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:38px; color:#8FD14F; line-height:1.1">0 minutes</div>
-            </div>
-            <a href="./signup.html" style="display:inline-flex; align-items:center; justify-content:center; font-weight:600; font-size:15px; padding:13px 22px; border-radius:10px; background:#fff; color:#163C2A; transition:transform .15s ease, box-shadow .15s ease" style-hover="transform:translateY(-1px); box-shadow:0 8px 20px rgba(0,0,0,0.15); color:#163C2A">Start free</a>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -425,7 +582,7 @@ if (!window.__fpPixel) { window.__fpPixel = true; fbq('init', '2178287276369092'
             <span style="display:inline-flex; align-items:center; padding:9px 14px; border-radius:10px; border:1px solid rgba(255,255,255,0.25); color:#fff">Android</span>
             <span style="display:inline-flex; align-items:center; padding:9px 14px; border-radius:10px; background:rgba(143,209,79,0.16); color:#8FD14F">FREE FOR EVERY CREW MEMBER</span>
           </div>
-          <a href="./signup.html" style="display:inline-flex; align-items:center; justify-content:center; font-weight:600; font-size:15px; padding:13px 22px; border-radius:10px; background:#fff; color:#163C2A; transition:transform .15s ease, box-shadow .15s ease" style-hover="transform:translateY(-1px); box-shadow:0 8px 20px rgba(0,0,0,0.15); color:#163C2A">Start free</a>
+          <a href="./signup.html" style="display:inline-flex; align-items:center; justify-content:center; font-weight:600; font-size:15px; padding:13px 22px; border-radius:10px; background:#fff; color:#163C2A; transition:transform .15s ease, box-shadow .15s ease" style-hover="transform:translateY(-1px); box-shadow:0 8px 20px rgba(0,0,0,0.15); color:#163C2A">Try for free</a>
         </div>
         <div style="display:flex; justify-content:center">
         <div data-m="mockphone" style="width:300px; background:#0E2419; border-radius:46px; padding:10px; box-shadow:0 30px 60px rgba(0,0,0,0.4)">
@@ -474,17 +631,18 @@ if (!window.__fpPixel) { window.__fpPixel = true; fbq('init', '2178287276369092'
         <p data-m="lead" style="color:#5C6B62; font-size:16.5px; margin-top:14px">Lawn care and landscaping owners — not "field service" in general — running their whole week on Field Pilot.</p>
       </div>
 
-      <div data-m="hscroll grid hscrollsm hscrollcard" data-reveal style="display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-bottom:34px">
-        <div><div data-m="fs44" style="font-family:'Space Grotesk',sans-serif; font-size:40px; font-weight:700; line-height:1">×2.5</div><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:#5C6B62; margin-top:8px">Annual revenue, two seasons</div></div>
-        <div><div data-m="fs44" style="font-family:'Space Grotesk',sans-serif; font-size:40px; font-weight:700; line-height:1">+2</div><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:#5C6B62; margin-top:8px">Crews hired, zero office work</div></div>
+      <div data-m="grid hscrollcard tstats" data-reveal style="display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-bottom:34px">
+        <div><div data-m="fs44" style="font-family:'Space Grotesk',sans-serif; font-size:40px; font-weight:700; line-height:1">×2.15<span style="color:#1F8A4C">*</span></div><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:#5C6B62; margin-top:8px">Annual revenue, on average</div></div>
+        <div><div data-m="fs44" style="font-family:'Space Grotesk',sans-serif; font-size:40px; font-weight:700; line-height:1">≈ +2</div><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:#5C6B62; margin-top:8px">Crews' worth of output, no new hires</div></div>
         <div><div data-m="fs44" style="font-family:'Space Grotesk',sans-serif; font-size:40px; font-weight:700; line-height:1">Same day</div><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:#5C6B62; margin-top:8px">Quotes out, from the truck</div></div>
       </div>
-      <div data-m="grid hscroll" data-reveal style="display:grid; grid-template-columns:1.15fr 1fr; gap:22px; margin-bottom:22px">
+      <div data-m="tnote" style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.04em; color:#5C6B62; margin:-22px 0 30px">*Average across Field Pilot customers after two seasons.</div>
+      <div data-m="grid hscroll tcar" data-reveal style="display:grid; grid-template-columns:1.15fr 1fr; gap:22px; margin-bottom:22px">
         <div data-m="pad38" style="background:#163C2A; color:#fff; border-radius:16px; padding:38px">
-          <div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; color:#8FD14F; font-weight:600">Revenue · $240K → $610K in two seasons</div>
-          <p data-m="fs26" style="font-family:'Space Grotesk',sans-serif; font-weight:600; letter-spacing:-0.02em; line-height:1.22; font-size:26px; margin:18px 0 20px; text-wrap:pretty">"We didn't hire an office manager — we just stopped guessing. Two more crews, 60 more properties on the books, and my annual revenue is two and a half times what it was."</p>
-          <p style="color:rgba(255,255,255,0.72); font-size:15px; margin-bottom:26px">"The routes are packed properly now, so each crew fits another property or two a day. Nothing gets forgotten, nothing gets done twice."</p>
-          <div style="display:flex; align-items:center; gap:12px">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; color:#8FD14F; font-weight:600">60 more properties · same team</div>
+          <p data-m="fs26" style="font-family:'Space Grotesk',sans-serif; font-weight:600; letter-spacing:-0.02em; line-height:1.22; font-size:26px; margin:18px 0 20px; text-wrap:pretty">"We didn't hire an office manager — we just stopped guessing. It feels like we added two crews without hiring anyone: 60 more properties on the books, same team."</p>
+          <p data-m="tsec" style="color:rgba(255,255,255,0.72); font-size:15px; margin-bottom:26px">"The routes are packed properly now, so each crew fits another property or two a day. Nothing gets forgotten, nothing gets done twice."</p>
+          <div data-m="tauth" style="display:flex; align-items:center; gap:12px">
             <image-slot id="yp-face-mike" src="./photos/mike.jpg" style="width:52px; height:52px; flex-shrink:0" shape="circle" placeholder="Photo: Mike, 46"></image-slot>
             <div>
               <div style="font-size:14.5px; font-weight:600">Mike Halloran, 46</div>
@@ -497,7 +655,7 @@ if (!window.__fpPixel) { window.__fpPixel = true; fbq('init', '2178287276369092'
           <div data-m="pad28" style="background:#fff; border:1px solid #E3E8E1; border-radius:16px; box-shadow:0 1px 2px rgba(14,36,25,0.04), 0 8px 24px rgba(14,36,25,0.06); padding:28px; flex:1">
             <div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; color:#166B3A; font-weight:600">Family · home by 6, for good</div>
             <p style="font-size:16px; margin:14px 0 18px; text-wrap:pretty">"I used to do invoices after dinner, every night. Now the app does it. I coach my son's team on Tuesdays and I don't think about accounting once."</p>
-            <div style="display:flex; align-items:center; gap:12px">
+            <div data-m="tauth" style="display:flex; align-items:center; gap:12px">
               <image-slot id="yp-face-dave" src="./photos/dave.jpg" style="width:46px; height:46px; flex-shrink:0" shape="circle" placeholder="Photo: Dave, 44"></image-slot>
               <div>
                 <div style="font-size:14px; font-weight:600">Dave Brennan, 44</div>
@@ -508,7 +666,7 @@ if (!window.__fpPixel) { window.__fpPixel = true; fbq('init', '2178287276369092'
           <div data-m="pad28" style="background:#fff; border:1px solid #E3E8E1; border-radius:16px; box-shadow:0 1px 2px rgba(14,36,25,0.04), 0 8px 24px rgba(14,36,25,0.06); padding:28px; flex:1">
             <div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; color:#166B3A; font-weight:600">Closing · 4 of 5 quotes signed</div>
             <p style="font-size:16px; margin:14px 0 18px; text-wrap:pretty">"I send the quote from the driveway before I leave the property. Half the time it's signed before I'm back at the shop — that alone paid for the year."</p>
-            <div style="display:flex; align-items:center; gap:12px">
+            <div data-m="tauth" style="display:flex; align-items:center; gap:12px">
               <image-slot id="yp-face-rick" src="./photos/rick.jpg" style="width:46px; height:46px; flex-shrink:0" shape="circle" placeholder="Photo: Rick, 47"></image-slot>
               <div>
                 <div style="font-size:14px; font-weight:600">Rick Salazar, 47</div>
@@ -519,7 +677,9 @@ if (!window.__fpPixel) { window.__fpPixel = true; fbq('init', '2178287276369092'
         </div>
       </div>
 
-      <div data-reveal style="display:flex; align-items:center; gap:14px; flex-wrap:wrap; font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; color:#5C6B62">
+      <div data-m="tswipe" style="display:none; align-items:center; justify-content:center; gap:10px; font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:#5C6B62; margin:-6px 0 22px"><span>←</span>Swipe · 3 owners<span>→</span></div>
+
+      <div data-m="tchips" data-reveal style="display:flex; align-items:center; gap:14px; flex-wrap:wrap; font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; color:#5C6B62">
         <span style="padding:9px 14px; border-radius:20px; background:#fff; border:1px solid #E3E8E1">No 1 app for lawn care &amp; landscaping</span>
         <span style="padding:9px 14px; border-radius:20px; background:#fff; border:1px solid #E3E8E1">Only for recurring lawn care work</span>
         <span style="padding:9px 14px; border-radius:20px; background:#fff; border:1px solid #E3E8E1">Free app for every crew member</span>
@@ -529,55 +689,109 @@ if (!window.__fpPixel) { window.__fpPixel = true; fbq('init', '2178287276369092'
 
   <section data-m="sect" id="pricing" style="padding:96px 0; background:#fff; border-top:1px solid #E3E8E1; border-bottom:1px solid #E3E8E1">
     <div data-m="wrap" style="max-width:1180px; margin:0 auto; padding:0 32px">
-      <div data-m="mb56" data-reveal style="max-width:660px; margin-bottom:44px">
+      <div data-m="mb56" data-reveal style="margin-bottom:34px">
         <div data-m="chapter" style="display:flex; align-items:center; justify-content:space-between; gap:16px; border-top:1px solid #E3E8E1; padding-top:16px; margin-bottom:16px"><span style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#166B3A; font-weight:600">Pricing</span><span data-m="chapnum" style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.08em; color:#5C6B62">05 / 06</span></div>
-        <h2 style="font-family:'Space Grotesk',sans-serif; font-weight:600; letter-spacing:-0.02em; line-height:1.08; font-size:clamp(26px,3.2vw,38px); margin-top:14px">Simple pricing that grows with your crews.</h2>
-        <p data-m="lead" style="color:#5C6B62; font-size:16.5px; margin-top:14px">No setup fees. No contracts. Cancel anytime.</p>
+        <div style="text-align:center; max-width:760px; margin:0 auto">
+          <h2 style="font-family:'Space Grotesk',sans-serif; font-weight:700; letter-spacing:-0.025em; line-height:1.05; font-size:clamp(30px,4vw,48px); margin:14px 0 0">Field Pilot <span style="color:#1F8A4C">Pricing</span></h2>
+          <p style="font-family:'Space Grotesk',sans-serif; font-weight:600; letter-spacing:-0.02em; font-size:clamp(18px,2vw,24px); margin:12px 0 0">Simple pricing that grows with your crews.</p>
+          <div data-m="pchecks" style="display:flex; align-items:center; justify-content:center; gap:28px; flex-wrap:wrap; margin-top:20px; font-size:14.5px; font-weight:500; color:#166B3A">
+            <span style="display:inline-flex; align-items:center; gap:8px; white-space:nowrap"><span style="color:#1F8A4C; font-weight:700">✓</span>Cancel anytime</span>
+            <span style="display:inline-flex; align-items:center; gap:8px; white-space:nowrap"><span style="color:#1F8A4C; font-weight:700">✓</span>Change plan easily</span>
+            <span style="display:inline-flex; align-items:center; gap:8px; white-space:nowrap"><span style="color:#1F8A4C; font-weight:700">✓</span>Free plan, no credit card</span>
+          </div>
+          <div style="display:inline-grid; grid-template-columns:1fr 1fr; margin-top:26px; padding:4px; border-radius:12px; border:1px solid #E3E8E1; background:#F6F7F2">
+            <button type="button" onClick="{{ setMonthly }}" style="border:none; border-radius:9px; padding:12px 26px; font-family:'Inter',sans-serif; font-weight:700; font-size:15px; cursor:pointer; transition:background .2s ease; background:{{ bMonthly.bg }}; color:{{ bMonthly.fg }}">Monthly</button>
+            <button type="button" onClick="{{ setAnnual }}" style="border:none; border-radius:9px; padding:12px 26px; font-family:'Inter',sans-serif; font-weight:700; font-size:15px; cursor:pointer; transition:background .2s ease; white-space:nowrap; background:{{ bAnnual.bg }}; color:{{ bAnnual.fg }}">Annual (-20%)</button>
+          </div>
+        </div>
       </div>
-      <div data-m="hscroll grid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:22px">
-        <div data-m="pad30" data-reveal style="background:#fff; border:1px solid #E3E8E1; border-radius:16px; padding:30px; display:flex; flex-direction:column">
-          <div style="font-weight:700; font-size:16px; margin-bottom:6px">Solo</div>
-          <div style="font-family:'Space Grotesk',sans-serif; font-size:38px; font-weight:700">$39<span style="font-family:'Inter',sans-serif; font-size:14px; color:#5C6B62; font-weight:500">/mo</span></div>
-          <div style="color:#5C6B62; font-size:13.5px; margin:6px 0 22px">1 crew member</div>
-          <ul style="list-style:none; padding:0; margin:0 0 26px; display:flex; flex-direction:column; gap:11px; flex:1">
-            <li style="display:flex; gap:9px; font-size:13.5px; align-items:flex-start"><span style="color:#1F8A4C">✓</span>Unlimited customers &amp; properties</li>
-            <li style="display:flex; gap:9px; font-size:13.5px; align-items:flex-start"><span style="color:#1F8A4C">✓</span>Scheduling &amp; recurring visits</li>
-            <li style="display:flex; gap:9px; font-size:13.5px; align-items:flex-start"><span style="color:#1F8A4C">✓</span>Route planning &amp; stop order</li>
-            <li style="display:flex; gap:9px; font-size:13.5px; align-items:flex-start"><span style="color:#1F8A4C">✓</span>Mobile app</li>
-            <li style="display:flex; gap:9px; font-size:13.5px; align-items:flex-start"><span style="color:#1F8A4C">✓</span>Photos &amp; proof of work</li>
-            <li style="display:flex; gap:9px; font-size:13.5px; align-items:flex-start"><span style="color:#1F8A4C">✓</span>Quotes &amp; invoices</li>
-            <li style="display:flex; gap:9px; font-size:13.5px; align-items:flex-start"><span style="color:#1F8A4C">✓</span>Basic analytics</li>
+      <div data-m="pband" data-reveal style="background:#163C2A; border-radius:24px; padding:26px">
+        <div data-m="hscroll grid pgrid" style="display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:18px">
+        <div data-m="pcard" style="background:#fff; border-radius:16px; padding:30px 24px 24px; display:flex; flex-direction:column; text-align:center; position:relative">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:#5C6B62; font-weight:600">Solo Free</div>
+          <div style="display:flex; align-items:baseline; justify-content:center; gap:4px; margin-top:8px">
+            <span style="font-family:'Space Grotesk',sans-serif; font-weight:700; letter-spacing:-0.03em; font-size:46px; line-height:1">$0</span>
+            
+          </div>
+          <div style="display:flex; flex-direction:column; align-items:center; margin-top:8px">
+            
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:#5C6B62">free forever</span>
+          </div>
+          <ul style="list-style:none; padding:0; margin:18px 0 24px; display:flex; flex-direction:column; gap:11px; flex:1; text-align:left">
+            <li style="display:flex; gap:10px; align-items:flex-start; font-size:14px; line-height:1.4; color:#0E2419"><span style="color:#1F8A4C; font-weight:700; flex-shrink:0; width:16px">✓</span><span><strong>1 user</strong> · no crew access</span></li>
+            <li style="display:flex; gap:10px; align-items:flex-start; font-size:14px; line-height:1.4; color:#0E2419"><span style="color:#1F8A4C; font-weight:700; flex-shrink:0; width:16px">✓</span><span>Up to <strong>5 customers</strong></span></li>
+            <li style="display:flex; gap:10px; align-items:flex-start; font-size:14px; line-height:1.4; color:#0E2419"><span style="color:#1F8A4C; font-weight:700; flex-shrink:0; width:16px">✓</span><span>Scheduling &amp; recurring visits</span></li>
+            <li style="display:flex; gap:10px; align-items:flex-start; font-size:14px; line-height:1.4; color:#0E2419"><span style="color:#1F8A4C; font-weight:700; flex-shrink:0; width:16px">✓</span><span>Route planning</span></li>
+            <li style="display:flex; gap:10px; align-items:flex-start; font-size:14px; line-height:1.4; color:#0E2419"><span style="color:#1F8A4C; font-weight:700; flex-shrink:0; width:16px">✓</span><span>Quotes &amp; invoices</span></li>
+            <li style="display:flex; gap:10px; align-items:flex-start; font-size:14px; line-height:1.4; color:#0E2419"><span style="color:#1F8A4C; font-weight:700; flex-shrink:0; width:16px">✓</span><span>Crew mobile app</span></li>
+            <li style="display:flex; gap:10px; align-items:flex-start; font-size:14px; line-height:1.4; color:#8A978F"><span style="flex-shrink:0; width:16px; height:16px; margin-top:2px; border-radius:50%; border:1.4px solid #B9C4BB; color:#B9C4BB; font-size:9px; display:flex; align-items:center; justify-content:center">✕</span><span>Analytics</span></li>
           </ul>
-          <a href="./signup.html" style="display:inline-flex; align-items:center; justify-content:center; font-weight:600; font-size:15px; padding:13px 22px; border-radius:10px; background:transparent; color:#0E2419; border:1px solid #E3E8E1; transition:border-color .15s ease" style-hover="border-color:#0E2419; color:#0E2419">Start free</a>
+          <a href="./signup.html" style="display:flex; align-items:center; justify-content:center; padding:14px 18px; border-radius:10px; background:#fff; color:#0E2419; border:1px solid #0E2419; font-family:'IBM Plex Mono',monospace; font-size:13px; letter-spacing:.06em; text-transform:uppercase; font-weight:600; white-space:nowrap; transition:transform .15s ease, box-shadow .15s ease" style-hover="transform:translateY(-1px); box-shadow:0 8px 20px rgba(14,36,25,0.18); color:#0E2419">Try for free</a>
         </div>
-        <div data-m="pad30" data-reveal style="background:#fff; border:1px solid #1F8A4C; border-radius:16px; padding:30px; display:flex; flex-direction:column; position:relative; box-shadow:0 0 0 3px rgba(31,138,76,0.12), 0 8px 24px rgba(14,36,25,0.06)">
-          <span style="position:absolute; top:-13px; left:30px; background:#1F8A4C; color:#fff; font-family:'IBM Plex Mono',monospace; font-size:10.5px; padding:4px 10px; border-radius:20px; font-weight:600">Most popular</span>
-          <div style="font-weight:700; font-size:16px; margin-bottom:6px">Crew</div>
-          <div style="font-family:'Space Grotesk',sans-serif; font-size:38px; font-weight:700">$79<span style="font-family:'Inter',sans-serif; font-size:14px; color:#5C6B62; font-weight:500">/mo</span></div>
-          <div style="color:#5C6B62; font-size:13.5px; margin:6px 0 22px">2–5 crew members</div>
-          <ul style="list-style:none; padding:0; margin:0 0 26px; display:flex; flex-direction:column; gap:11px; flex:1">
-            <li style="display:flex; gap:9px; font-size:13.5px; align-items:flex-start"><span style="color:#1F8A4C">✓</span>Unlimited customers &amp; properties</li>
-            <li style="display:flex; gap:9px; font-size:13.5px; align-items:flex-start"><span style="color:#1F8A4C">✓</span>Scheduling &amp; recurring visits</li>
-            <li style="display:flex; gap:9px; font-size:13.5px; align-items:flex-start"><span style="color:#1F8A4C">✓</span>Route planning &amp; stop order</li>
-            <li style="display:flex; gap:9px; font-size:13.5px; align-items:flex-start"><span style="color:#1F8A4C">✓</span>Mobile app</li>
-            <li style="display:flex; gap:9px; font-size:13.5px; align-items:flex-start"><span style="color:#1F8A4C">✓</span>Photos &amp; proof of work</li>
-            <li style="display:flex; gap:9px; font-size:13.5px; align-items:flex-start"><span style="color:#1F8A4C">✓</span>Quotes &amp; invoices</li>
-            <li style="display:flex; gap:9px; font-size:13.5px; align-items:flex-start"><span style="color:#1F8A4C">✓</span>Basic analytics</li>
+        <div data-m="pcard" style="background:#fff; border-radius:16px; padding:30px 24px 24px; display:flex; flex-direction:column; text-align:center; position:relative">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:#5C6B62; font-weight:600">Solo Plus</div>
+          <div style="display:flex; align-items:baseline; justify-content:center; gap:4px; margin-top:8px">
+            <span style="font-family:'Space Grotesk',sans-serif; font-weight:700; letter-spacing:-0.03em; font-size:46px; line-height:1">{{ pPlus }}</span>
+            <span style="font-size:15px; color:#5C6B62">/month</span>
+          </div>
+          <div style="display:flex; flex-direction:column; align-items:center; margin-top:8px">
+            
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:#5C6B62">{{ billNote }}</span>
+          </div>
+          <ul style="list-style:none; padding:0; margin:18px 0 24px; display:flex; flex-direction:column; gap:11px; flex:1; text-align:left">
+            <li style="display:flex; gap:10px; align-items:flex-start; font-size:14px; line-height:1.4; color:#0E2419"><span style="color:#1F8A4C; font-weight:700; flex-shrink:0; width:16px">✓</span><span><strong>1 user</strong> · no crew access</span></li>
+            <li style="display:flex; gap:10px; align-items:flex-start; font-size:14px; line-height:1.4; color:#0E2419"><span style="color:#1F8A4C; font-weight:700; flex-shrink:0; width:16px">✓</span><span><strong>Unlimited</strong> customers &amp; properties</span></li>
+            <li style="display:flex; gap:10px; align-items:flex-start; font-size:14px; line-height:1.4; color:#0E2419"><span style="color:#1F8A4C; font-weight:700; flex-shrink:0; width:16px">✓</span><span>Scheduling &amp; recurring visits</span></li>
+            <li style="display:flex; gap:10px; align-items:flex-start; font-size:14px; line-height:1.4; color:#0E2419"><span style="color:#1F8A4C; font-weight:700; flex-shrink:0; width:16px">✓</span><span>Route planning</span></li>
+            <li style="display:flex; gap:10px; align-items:flex-start; font-size:14px; line-height:1.4; color:#0E2419"><span style="color:#1F8A4C; font-weight:700; flex-shrink:0; width:16px">✓</span><span>Quotes &amp; invoices</span></li>
+            <li style="display:flex; gap:10px; align-items:flex-start; font-size:14px; line-height:1.4; color:#0E2419"><span style="color:#1F8A4C; font-weight:700; flex-shrink:0; width:16px">✓</span><span>Crew mobile app</span></li>
+            <li style="display:flex; gap:10px; align-items:flex-start; font-size:14px; line-height:1.4; color:#0E2419"><span style="color:#1F8A4C; font-weight:700; flex-shrink:0; width:16px">✓</span><span>Analytics</span></li>
           </ul>
-          <a href="./signup.html" style="display:inline-flex; align-items:center; justify-content:center; font-weight:600; font-size:15px; padding:13px 22px; border-radius:10px; background:#0E2419; color:#fff; border:1px solid transparent; transition:transform .15s ease, box-shadow .15s ease" style-hover="transform:translateY(-1px); box-shadow:0 8px 20px rgba(14,36,25,0.18); color:#fff">Start free</a>
+          <a href="./signup.html" style="display:flex; align-items:center; justify-content:center; padding:14px 18px; border-radius:10px; background:#0E2419; color:#fff; border:1px solid #0E2419; font-family:'IBM Plex Mono',monospace; font-size:13px; letter-spacing:.06em; text-transform:uppercase; font-weight:600; white-space:nowrap; transition:transform .15s ease, box-shadow .15s ease" style-hover="transform:translateY(-1px); box-shadow:0 8px 20px rgba(14,36,25,0.18); color:#fff">Subscribe</a>
         </div>
-        <div data-m="pad30" data-reveal style="background:#fff; border:1px solid #E3E8E1; border-radius:16px; padding:30px; display:flex; flex-direction:column">
-          <div style="font-weight:700; font-size:16px; margin-bottom:6px">Business</div>
-          <div style="font-family:'Space Grotesk',sans-serif; font-size:38px; font-weight:700">$179<span style="font-family:'Inter',sans-serif; font-size:14px; color:#5C6B62; font-weight:500">/mo</span></div>
-          <div style="color:#5C6B62; font-size:13.5px; margin:6px 0 22px">6+ crew members</div>
-          <ul style="list-style:none; padding:0; margin:0 0 26px; display:flex; flex-direction:column; gap:11px; flex:1">
-            <li style="display:flex; gap:9px; font-size:13.5px; align-items:flex-start"><span style="color:#1F8A4C">✓</span>Everything in Crew</li>
-            <li style="display:flex; gap:9px; font-size:13.5px; align-items:flex-start"><span style="color:#1F8A4C">✓</span>Multiple crews &amp; managers</li>
-            <li style="display:flex; gap:9px; font-size:13.5px; align-items:flex-start"><span style="color:#1F8A4C">✓</span>Advanced analytics</li>
-            <li style="display:flex; gap:9px; font-size:13.5px; align-items:flex-start"><span style="color:#1F8A4C">✓</span>Priority support</li>
-            <li style="display:flex; gap:9px; font-size:13.5px; align-items:flex-start"><span style="color:#1F8A4C">✓</span>Early access to new features</li>
+        <div data-m="pcard" style="background:#fff; border-radius:16px; padding:30px 24px 24px; display:flex; flex-direction:column; text-align:center; position:relative; box-shadow:0 0 0 2px #8FD14F">
+          <span style="position:absolute; top:-12px; left:50%; transform:translateX(-50%); background:#8FD14F; color:#0E2419; font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; font-weight:600; padding:4px 10px; border-radius:20px; white-space:nowrap">Most popular</span>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:#5C6B62; font-weight:600">Team</div>
+          <div style="display:flex; align-items:baseline; justify-content:center; gap:4px; margin-top:8px">
+            <span style="font-family:'Space Grotesk',sans-serif; font-weight:700; letter-spacing:-0.03em; font-size:46px; line-height:1">{{ pTeam }}</span>
+            <span style="font-size:15px; color:#5C6B62">/month</span>
+          </div>
+          <div style="display:flex; flex-direction:column; align-items:center; margin-top:8px">
+            
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:#5C6B62">{{ billNote }}</span>
+          </div>
+          <ul style="list-style:none; padding:0; margin:18px 0 24px; display:flex; flex-direction:column; gap:11px; flex:1; text-align:left">
+            <li style="display:flex; gap:10px; align-items:flex-start; font-size:14px; line-height:1.4; color:#0E2419"><span style="color:#1F8A4C; font-weight:700; flex-shrink:0; width:16px">✓</span><span>Up to <strong>5 crew members</strong></span></li>
+            <li style="display:flex; gap:10px; align-items:flex-start; font-size:14px; line-height:1.4; color:#0E2419"><span style="color:#1F8A4C; font-weight:700; flex-shrink:0; width:16px">✓</span><span><strong>Unlimited</strong> customers &amp; properties</span></li>
+            <li style="display:flex; gap:10px; align-items:flex-start; font-size:14px; line-height:1.4; color:#0E2419"><span style="color:#1F8A4C; font-weight:700; flex-shrink:0; width:16px">✓</span><span>Scheduling &amp; recurring visits</span></li>
+            <li style="display:flex; gap:10px; align-items:flex-start; font-size:14px; line-height:1.4; color:#0E2419"><span style="color:#1F8A4C; font-weight:700; flex-shrink:0; width:16px">✓</span><span>Route planning</span></li>
+            <li style="display:flex; gap:10px; align-items:flex-start; font-size:14px; line-height:1.4; color:#0E2419"><span style="color:#1F8A4C; font-weight:700; flex-shrink:0; width:16px">✓</span><span>Quotes &amp; invoices</span></li>
+            <li style="display:flex; gap:10px; align-items:flex-start; font-size:14px; line-height:1.4; color:#0E2419"><span style="color:#1F8A4C; font-weight:700; flex-shrink:0; width:16px">✓</span><span>Crew mobile app</span></li>
+            <li style="display:flex; gap:10px; align-items:flex-start; font-size:14px; line-height:1.4; color:#0E2419"><span style="color:#1F8A4C; font-weight:700; flex-shrink:0; width:16px">✓</span><span>Analytics</span></li>
           </ul>
-          <a href="./signup.html" style="display:inline-flex; align-items:center; justify-content:center; font-weight:600; font-size:15px; padding:13px 22px; border-radius:10px; background:transparent; color:#0E2419; border:1px solid #E3E8E1; transition:border-color .15s ease" style-hover="border-color:#0E2419; color:#0E2419">Start free</a>
+          <a href="./signup.html" style="display:flex; align-items:center; justify-content:center; padding:14px 18px; border-radius:10px; background:#0E2419; color:#fff; border:1px solid #0E2419; font-family:'IBM Plex Mono',monospace; font-size:13px; letter-spacing:.06em; text-transform:uppercase; font-weight:600; white-space:nowrap; transition:transform .15s ease, box-shadow .15s ease" style-hover="transform:translateY(-1px); box-shadow:0 8px 20px rgba(14,36,25,0.18); color:#fff">Subscribe</a>
+        </div>
+        <div data-m="pcard" style="background:#fff; border-radius:16px; padding:30px 24px 24px; display:flex; flex-direction:column; text-align:center; position:relative">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:#5C6B62; font-weight:600">Business</div>
+          <div style="display:flex; align-items:baseline; justify-content:center; gap:4px; margin-top:8px">
+            <span style="font-family:'Space Grotesk',sans-serif; font-weight:700; letter-spacing:-0.03em; font-size:46px; line-height:1">{{ pBiz }}</span>
+            <span style="font-size:15px; color:#5C6B62">/month</span>
+          </div>
+          <div style="display:flex; flex-direction:column; align-items:center; margin-top:8px">
+            
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:#5C6B62">{{ billNote }}</span>
+          </div>
+          <ul style="list-style:none; padding:0; margin:18px 0 24px; display:flex; flex-direction:column; gap:11px; flex:1; text-align:left">
+            <li style="display:flex; gap:10px; align-items:flex-start; font-size:14px; line-height:1.4; color:#0E2419"><span style="color:#1F8A4C; font-weight:700; flex-shrink:0; width:16px">✓</span><span>Up to <strong>15 crew members</strong></span></li>
+            <li style="display:flex; gap:10px; align-items:flex-start; font-size:14px; line-height:1.4; color:#0E2419"><span style="color:#1F8A4C; font-weight:700; flex-shrink:0; width:16px">✓</span><span><strong>Unlimited</strong> customers &amp; properties</span></li>
+            <li style="display:flex; gap:10px; align-items:flex-start; font-size:14px; line-height:1.4; color:#0E2419"><span style="color:#1F8A4C; font-weight:700; flex-shrink:0; width:16px">✓</span><span>Scheduling &amp; recurring visits</span></li>
+            <li style="display:flex; gap:10px; align-items:flex-start; font-size:14px; line-height:1.4; color:#0E2419"><span style="color:#1F8A4C; font-weight:700; flex-shrink:0; width:16px">✓</span><span>Route planning</span></li>
+            <li style="display:flex; gap:10px; align-items:flex-start; font-size:14px; line-height:1.4; color:#0E2419"><span style="color:#1F8A4C; font-weight:700; flex-shrink:0; width:16px">✓</span><span>Quotes &amp; invoices</span></li>
+            <li style="display:flex; gap:10px; align-items:flex-start; font-size:14px; line-height:1.4; color:#0E2419"><span style="color:#1F8A4C; font-weight:700; flex-shrink:0; width:16px">✓</span><span>Crew mobile app</span></li>
+            <li style="display:flex; gap:10px; align-items:flex-start; font-size:14px; line-height:1.4; color:#0E2419"><span style="color:#1F8A4C; font-weight:700; flex-shrink:0; width:16px">✓</span><span>Analytics &amp; priority support</span></li>
+          </ul>
+          <a href="./signup.html" style="display:flex; align-items:center; justify-content:center; padding:14px 18px; border-radius:10px; background:#0E2419; color:#fff; border:1px solid #0E2419; font-family:'IBM Plex Mono',monospace; font-size:13px; letter-spacing:.06em; text-transform:uppercase; font-weight:600; white-space:nowrap; transition:transform .15s ease, box-shadow .15s ease" style-hover="transform:translateY(-1px); box-shadow:0 8px 20px rgba(14,36,25,0.18); color:#fff">Subscribe</a>
+        </div>
         </div>
       </div>
     </div>
@@ -630,9 +844,9 @@ if (!window.__fpPixel) { window.__fpPixel = true; fbq('init', '2178287276369092'
     <div data-m="inset padcta" data-reveal style="background:#0E2419; color:#fff; text-align:center; border-radius:28px; margin:0 32px; padding:90px 24px">
       <span style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; letter-spacing:0.06em; text-transform:uppercase; color:#8FD14F; display:inline-flex; align-items:center; justify-content:center; gap:8px; font-weight:600"><span style="width:6px; height:6px; border-radius:50%; background:#8FD14F; box-shadow:0 0 0 3px rgba(143,209,79,0.25)"></span>Open the app. Know what to do.</span>
       <h2 style="font-family:'Space Grotesk',sans-serif; font-weight:600; letter-spacing:-0.02em; line-height:1.08; font-size:clamp(30px,4.4vw,50px); margin:16px auto 14px; max-width:680px">Grow the business. Get your evenings back.</h2>
-      <p style="color:rgba(255,255,255,0.65); font-size:16.5px; margin-bottom:32px">The #1 app for lawn care &amp; landscaping businesses. Start free — no credit card required.</p>
+      <p style="color:rgba(255,255,255,0.65); font-size:16.5px; margin-bottom:32px">The #1 app for lawn care &amp; landscaping businesses. Try it for free — no credit card required.</p>
       <div style="display:flex; align-items:center; justify-content:center; gap:16px; flex-wrap:wrap">
-        <a href="./signup.html" style="display:inline-flex; align-items:center; justify-content:center; font-weight:600; font-size:15px; padding:13px 22px; border-radius:10px; background:#fff; color:#163C2A; transition:transform .15s ease, box-shadow .15s ease" style-hover="transform:translateY(-1px); box-shadow:0 8px 20px rgba(0,0,0,0.15); color:#163C2A">Start free</a>
+        <a href="./signup.html" style="display:inline-flex; align-items:center; justify-content:center; font-weight:600; font-size:15px; padding:13px 22px; border-radius:10px; background:#fff; color:#163C2A; transition:transform .15s ease, box-shadow .15s ease" style-hover="transform:translateY(-1px); box-shadow:0 8px 20px rgba(0,0,0,0.15); color:#163C2A">Try for free</a>
         <a href="#product" style="display:inline-flex; align-items:center; justify-content:center; font-weight:600; font-size:15px; padding:13px 22px; border-radius:10px; background:transparent; border:1px solid rgba(255,255,255,0.25); color:#fff" style-hover="border-color:#fff; color:#fff">See how it works</a>
       </div>
     </div>
@@ -641,10 +855,10 @@ if (!window.__fpPixel) { window.__fpPixel = true; fbq('init', '2178287276369092'
 
 <div data-m="mobilecta" style="display:none; position:fixed; left:0; right:0; bottom:0; z-index:60; align-items:center; justify-content:space-between; gap:12px; padding:12px 16px; background:rgba(246,247,242,0.96); backdrop-filter:blur(10px); border-top:1px solid #E3E8E1">
   <div>
-    <div style="font-size:13px; font-weight:600">Start free today</div>
+    <div style="font-size:13px; font-weight:600">Try it free today</div>
     <div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:#5C6B62">no card · free crew app</div>
   </div>
-  <a href="./signup.html" style="display:inline-flex; align-items:center; justify-content:center; font-weight:600; font-size:15px; padding:14px 20px; border-radius:10px; background:#0E2419; color:#fff">Start free</a>
+  <a href="./signup.html" style="display:inline-flex; align-items:center; justify-content:center; font-weight:600; font-size:15px; padding:14px 20px; border-radius:10px; background:#0E2419; color:#fff">Try for free</a>
 </div>
 
 <footer style="padding:56px 0 40px">
@@ -670,7 +884,7 @@ if (!window.__fpPixel) { window.__fpPixel = true; fbq('init', '2178287276369092'
 </template></x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { heroStep: 0, appStep: 0, crews: 2, price: 65, isMobile: false, openFaq: 0, tab: 0, playing: false };
+  state = { heroStep: 0, appStep: 0, crews: 2, price: 65, isMobile: false, openFaq: 0, tab: 0, playing: false, annual: true, menuOpen: false };
   videoRef = React.createRef();
 
   componentDidMount() {
@@ -762,7 +976,22 @@ class Component extends DCLogic {
       };
     }
 
+    const an = this.state.annual;
+    const seg = (on) => on ? { bg: '#0E2419', fg: '#ffffff' } : { bg: 'transparent', fg: '#0E2419' };
     return Object.assign(faq, tabs, {
+      menuOpen: this.state.menuOpen,
+      openMenu: () => this.setState({ menuOpen: true }),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      pPlus: an ? '$23' : '$29',
+      pTeam: an ? '$55' : '$69',
+      pBiz: an ? '$79' : '$99',
+      uTeam: an ? '$9.17' : '$11.50',
+      uBiz: an ? '$4.94' : '$6.19',
+      billNote: an ? 'billed annually' : 'billed monthly',
+      bMonthly: seg(!an),
+      bAnnual: seg(an),
+      setMonthly: () => this.setState({ annual: false }),
+      setAnnual: () => this.setState({ annual: true }),
       videoRef: this.videoRef,
       showPoster: !this.state.playing,
       videoControls: this.state.playing,
