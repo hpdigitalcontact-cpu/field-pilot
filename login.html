@@ -77,7 +77,7 @@ if (!window.__fpPixel) { window.__fpPixel = true; fbq('init', '2178287276369092'
         </div>
         <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:16px; font-size:13.5px">
           <button type="button" onClick="{{ toForgot }}" style="border:none; background:transparent; padding:0; font-size:13.5px; color:#166B3A; text-decoration:underline; cursor:pointer">I forgot my password</button>
-          <a href="./signup.html?v=20261005" style="font-weight:600">Sign up</a>
+          <a href="./signup.html?v=20261005b" style="font-weight:600">Sign up</a>
         </div>
       </div>
     </sc-if>
@@ -113,7 +113,7 @@ class Component extends DCLogic {
     if (!s.password) return this.setState({ error: 'Enter your password.' });
     if (typeof window.gtag === 'function') window.gtag('event', 'login');
     this.setState({ loading: true, error: '' });
-    this._t = setTimeout(() => { window.location.href = './app.html?v=20261005'; }, 700);
+    this._t = setTimeout(() => { window.location.href = './app.html?v=20261005b'; }, 700);
   };
 
   sendReset = () => {

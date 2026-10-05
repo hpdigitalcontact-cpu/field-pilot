@@ -111,7 +111,7 @@ if (!window.__fpPixel) { window.__fpPixel = true; fbq('init', '2178287276369092'
         </div>
 
         <p style="font-size:12.5px; color:#5C6B62; text-align:center; margin:14px 0 6px">By signing up, you accept our <a href="#">Terms of Service</a>.</p>
-        <p style="font-size:13.5px; text-align:center; margin:0"><a href="./login.html?v=20261005" style="font-weight:600; text-decoration:underline">I already have an account</a></p>
+        <p style="font-size:13.5px; text-align:center; margin:0"><a href="./login.html?v=20261005b" style="font-weight:600; text-decoration:underline">I already have an account</a></p>
       </div>
     </sc-if>
 
@@ -149,7 +149,7 @@ class Component extends DCLogic {
     if (typeof window.gtag === 'function') window.gtag('event', 'signup_complete', { team_size: s.size, source: s.heard || 'none' });
     if (typeof window.fbq === 'function') window.fbq('track', 'Lead', { content_name: 'workspace created' });
     this.setState({ done: true, error: '' });
-    this._t = setTimeout(() => { window.location.href = './app.html?v=20261005'; }, 1600);
+    this._t = setTimeout(() => { window.location.href = './app.html?v=20261005b'; }, 1600);
   };
 
   componentWillUnmount() { clearTimeout(this._t); }
