@@ -47,7 +47,7 @@ if (!window.__fpPixel) { window.__fpPixel = true; fbq('init', '2178287276369092'
   }
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="./fp-db.js?v=20261006zg"></script>
+<script src="./fp-db.js?v=20261006zj"></script>
 <style>@media (max-width: 900px) { [data-m="wa"] { right:14px !important; bottom:16px !important; } [data-m="walabel"] { display:none !important; } [data-m="wa"] > span:last-child { width:48px !important; height:48px !important; } }</style>
 </helmet>
 
@@ -79,7 +79,7 @@ if (!window.__fpPixel) { window.__fpPixel = true; fbq('init', '2178287276369092'
         </div>
         <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:16px; font-size:13.5px">
           <button type="button" onClick="{{ toForgot }}" style="border:none; background:transparent; padding:0; font-size:13.5px; color:#166B3A; text-decoration:underline; cursor:pointer">I forgot my password</button>
-          <a href="./signup.html?v=20261006zg" style="font-weight:600">Sign up</a>
+          <a href="./signup.html?v=20261006zj" style="font-weight:600">Sign up</a>
         </div>
       </div>
     </sc-if>
@@ -132,7 +132,7 @@ class Component extends DCLogic {
     const db = window.getFPDB ? await window.getFPDB() : null;
     if (!db) return;
     const { data } = await db.auth.getSession();
-    if (data && data.session && window.fpIsLiveHost && window.fpIsLiveHost()) window.location.replace('./app.html?v=20261006zg');
+    if (data && data.session && window.fpIsLiveHost && window.fpIsLiveHost()) window.location.replace('./app.html?v=20261006zj');
   };
 
   doLogin = async (email, password) => {
@@ -143,7 +143,7 @@ class Component extends DCLogic {
       const msg = /invalid/i.test(error.message) ? 'Wrong email or password.' : /confirm/i.test(error.message) ? 'Confirm your email first — check your inbox.' : error.message;
       return this.setState({ loading: false, error: msg });
     }
-    window.location.href = './app.html?v=20261006zg';
+    window.location.href = './app.html?v=20261006zj';
   };
 
   sendReset = () => {

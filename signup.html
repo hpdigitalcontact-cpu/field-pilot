@@ -49,7 +49,7 @@ if (!window.__fpPixel) { window.__fpPixel = true; fbq('init', '2178287276369092'
   }
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="./fp-db.js?v=20261006zg"></script>
+<script src="./fp-db.js?v=20261006zj"></script>
 <style>@media (max-width: 900px) { [data-m="wa"] { right:14px !important; bottom:16px !important; } [data-m="walabel"] { display:none !important; } [data-m="wa"] > span:last-child { width:48px !important; height:48px !important; } }</style>
 </helmet>
 
@@ -113,7 +113,7 @@ if (!window.__fpPixel) { window.__fpPixel = true; fbq('init', '2178287276369092'
         </div>
 
         <p style="font-size:12.5px; color:#5C6B62; text-align:center; margin:14px 0 6px">By signing up, you accept our <a href="#">Terms of Service</a>.</p>
-        <p style="font-size:13.5px; text-align:center; margin:0"><a href="./login.html?v=20261006zg" style="font-weight:600; text-decoration:underline">I already have an account</a></p>
+        <p style="font-size:13.5px; text-align:center; margin:0"><a href="./login.html?v=20261006zj" style="font-weight:600; text-decoration:underline">I already have an account</a></p>
       </div>
     </sc-if>
 
@@ -179,7 +179,7 @@ class Component extends DCLogic {
     if (typeof window.fbq === 'function') window.fbq('track', 'Lead', { content_name: 'workspace created' });
     if (!data.session) return this.setState({ error: 'Almost there — confirm your email from the link we just sent, then log in.' });
     this.setState({ done: true, error: '' });
-    this._t = setTimeout(() => { window.location.href = './app.html?v=20261006zg'; }, 1400);
+    this._t = setTimeout(() => { window.location.href = './app.html?v=20261006zj'; }, 1400);
   };
 
   componentWillUnmount() { clearTimeout(this._t); }
