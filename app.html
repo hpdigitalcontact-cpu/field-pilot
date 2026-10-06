@@ -52,7 +52,7 @@ if (!window.__fpPixel) { window.__fpPixel = true; fbq('init', '2178287276369092'
   }
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="./fp-db.js?v=20261006zn"></script>
+<script src="./fp-db.js?v=20261006dk2"></script>
 <style>@media (max-width: 900px) { [data-m="wa"] { gap:8px !important; right:14px !important; bottom:82px !important; } [data-m="walabel"] { display:none !important; } [data-m="walabelm"] { display:block !important; } [data-m="wa"] > span:last-child { width:48px !important; height:48px !important; } }</style>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -128,14 +128,9 @@ if (!window.__fpPixel) { window.__fpPixel = true; fbq('init', '2178287276369092'
       </div>
     </div>
 
-    <div data-m="macct" style="display:none; align-items:center; justify-content:space-between; gap:12px; background:#163C2A; color:#fff; border-radius:14px; padding:11px 12px 11px 14px; margin-bottom:16px">
-      <div style="min-width:0">
-        <div style="font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:.08em; color:#8FD14F; font-weight:600">{{ planName }} · CREW {{ crewUsage }}</div>
-        <div style="height:4px; width:120px; border-radius:4px; background:rgba(255,255,255,0.14); margin-top:6px; overflow:hidden"><div style="height:100%; background:#8FD14F; width:{{ crewPct }}"></div></div>
-      </div>
-      <sc-if value="{{ showUpgrade }}" hint-placeholder-val="{{ false }}">
-        <a href="#" onClick="{{ openPricing }}" style="flex-shrink:0; display:inline-flex; align-items:center; gap:6px; padding:9px 12px; border-radius:10px; background:linear-gradient(135deg,#8FD14F,#1F8A4C); color:#0E2419; font-weight:700; font-size:13px">Upgrade</a>
-      </sc-if>
+    <div data-m="macct" style="display:none; align-items:center; gap:12px; background:#E8F4DA; border:1px solid #CFE6B5; border-radius:14px; padding:11px 14px; margin-bottom:16px">
+      <span style="width:36px; height:36px; flex-shrink:0; border-radius:10px; background:#fff; display:flex; align-items:center; justify-content:center; font-size:20px; line-height:1; box-shadow:0 2px 6px rgba(14,36,25,0.08)">💻</span>
+      <span style="font-size:13px; line-height:1.4; color:#0E2419">For a smoother, more intuitive experience, we recommend <strong style="color:#166B3A">setting up Field Pilot on desktop</strong>.</span>
     </div>
 
     <sc-if value="{{ isToday }}" hint-placeholder-val="{{ true }}">
@@ -1442,7 +1437,7 @@ class Component extends DCLogic {
     const { data } = await db.auth.getSession();
     const session = data && data.session;
     if (!session) {
-      if (window.fpIsLiveHost && window.fpIsLiveHost()) window.location.href = './login.html?v=20261006zn';
+      if (window.fpIsLiveHost && window.fpIsLiveHost()) window.location.href = './login.html?v=20261006dk2';
       return;
     }
     const user = session.user;
@@ -1509,7 +1504,7 @@ class Component extends DCLogic {
 
   logout = async () => {
     if (this.db) await this.db.auth.signOut();
-    window.location.href = './login.html?v=20261006zn';
+    window.location.href = './login.html?v=20261006dk2';
   };
 
   saveQuoteLive = async () => {
