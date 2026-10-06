@@ -21,7 +21,6 @@ if (!window.__fpPixel) { window.__fpPixel = true; fbq('init', '2178287276369092'
 <link rel="apple-touch-icon" href="./icon-180.png">
 <link rel="manifest" href="./manifest.json">
 <meta name="theme-color" content="#163C2A">
-<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
@@ -46,7 +45,7 @@ if (!window.__fpPixel) { window.__fpPixel = true; fbq('init', '2178287276369092'
   }
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="./fp-db.js?v=20261005c"></script>
+<script src="./fp-db.js?v=20261006b"></script>
 </helmet>
 
 <div data-m="shell" style="display:grid; grid-template-columns:248px 1fr; min-height:100vh">
@@ -765,10 +764,11 @@ class Component extends DCLogic {
     const { data } = await db.auth.getSession();
     const session = data && data.session;
     if (!session) {
-      if (window.fpIsLiveHost && window.fpIsLiveHost()) window.location.href = './login.html?v=20261005c';
+      if (window.fpIsLiveHost && window.fpIsLiveHost()) window.location.href = './login.html?v=20261006b';
       return;
     }
     const user = session.user;
+    this.trackTrialOnce(db, user);
     const [co, cu, qu, inv] = await Promise.all([
       db.from('companies').select('*').eq('owner_id', user.id).maybeSingle(),
       db.from('customers').select('*').order('created_at', { ascending: false }),
@@ -784,6 +784,26 @@ class Component extends DCLogic {
       dbInvoices: inv.data || [],
       currentId: 0
     });
+  }
+
+  trackTrialOnce(db, user) {
+    const meta = user.user_metadata || {};
+    const key = 'fp_trial_' + user.id;
+    let seen = false;
+    try { seen = localStorage.getItem(key) === '1'; } catch (e) {}
+    if (meta.trial_tracked || seen) return;
+    if (!meta.company) return;
+    const fire = () => {
+      if (typeof window.fbq !== 'function') return false;
+      window.fbq('track', 'StartTrial', { value: 0, currency: 'USD', predicted_ltv: 588, content_name: meta.team_size || 'unknown' }, { eventID: 'trial-' + user.id });
+      if (typeof window.gtag === 'function') window.gtag('event', 'trial_start', { team_size: meta.team_size || 'unknown' });
+      try { localStorage.setItem(key, '1'); } catch (e) {}
+      db.auth.updateUser({ data: { trial_tracked: true } });
+      return true;
+    };
+    let n = 0;
+    const tick = () => { if (!fire() && n++ < 40) setTimeout(tick, 250); };
+    tick();
   }
 
   fromRow(r) {
@@ -803,7 +823,7 @@ class Component extends DCLogic {
 
   logout = async () => {
     if (this.db) await this.db.auth.signOut();
-    window.location.href = './login.html?v=20261005c';
+    window.location.href = './login.html?v=20261006b';
   };
 
   saveQuoteLive = async () => {
