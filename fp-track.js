@@ -63,5 +63,6 @@
     if (/signup/.test(h)) send('try_click');
     else if (/buy\.stripe\.com/.test(h)) send('checkout_click');
     else if (/wa\.me/.test(h)) send('whatsapp_click');
+    else if (/calendly\.com/.test(h)) send('book_call');
   }, true);
 })();
