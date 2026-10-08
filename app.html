@@ -15,6 +15,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
 if (!window.__fpPixel) { window.__fpPixel = true; fbq('init', '2178287276369092'); fbq('track', 'PageView'); }
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2178287276369092&ev=PageView&noscript=1" alt="" /></noscript>
+<script src="./fp-track.js?v=20261007an" defer></script>
 <link rel="icon" href="./favicon.ico" sizes="any">
 <link rel="icon" href="./favicon.svg" type="image/svg+xml">
 <link rel="icon" href="./favicon.png" sizes="64x64">
@@ -52,7 +53,7 @@ if (!window.__fpPixel) { window.__fpPixel = true; fbq('init', '2178287276369092'
   }
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="./fp-db.js?v=20261006dk2"></script>
+<script src="./fp-db.js?v=20261007an"></script>
 <style>@media (max-width: 900px) { [data-m="wa"] { gap:8px !important; right:14px !important; bottom:82px !important; } [data-m="walabel"] { display:none !important; } [data-m="walabelm"] { display:block !important; } [data-m="wa"] > span:last-child { width:48px !important; height:48px !important; } }</style>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -1437,7 +1438,7 @@ class Component extends DCLogic {
     const { data } = await db.auth.getSession();
     const session = data && data.session;
     if (!session) {
-      if (window.fpIsLiveHost && window.fpIsLiveHost()) window.location.href = './login.html?v=20261006dk2';
+      if (window.fpIsLiveHost && window.fpIsLiveHost()) window.location.href = './login.html?v=20261007an';
       return;
     }
     const user = session.user;
@@ -1504,7 +1505,7 @@ class Component extends DCLogic {
 
   logout = async () => {
     if (this.db) await this.db.auth.signOut();
-    window.location.href = './login.html?v=20261006dk2';
+    window.location.href = './login.html?v=20261007an';
   };
 
   saveQuoteLive = async () => {

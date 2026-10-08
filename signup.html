@@ -15,6 +15,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,do
 if (!window.__fpPixel) { window.__fpPixel = true; fbq('init', '2178287276369092'); fbq('track', 'PageView'); }
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2178287276369092&ev=PageView&noscript=1" alt="" /></noscript>
+<script src="./fp-track.js?v=20261007an" defer></script>
 <link rel="icon" href="./favicon.ico" sizes="any">
 <link rel="icon" href="./favicon.svg" type="image/svg+xml">
 <link rel="icon" href="./favicon.png" sizes="64x64">
@@ -61,7 +62,7 @@ if (!window.__fpPixel) { window.__fpPixel = true; fbq('init', '2178287276369092'
   }
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="./fp-db.js?v=20261006sg"></script>
+<script src="./fp-db.js?v=20261007an"></script>
 <style>@media (max-width: 900px) { [data-m="wa"] { gap:8px !important; right:14px !important; bottom:16px !important; } [data-m="walabel"] { display:none !important; } [data-m="walabelm"] { display:none !important; } [data-m="walabelm-x"] { display:block !important; } [data-m="wa"] > span:last-child { width:48px !important; height:48px !important; } }</style>
 </helmet>
 
@@ -125,7 +126,7 @@ if (!window.__fpPixel) { window.__fpPixel = true; fbq('init', '2178287276369092'
         </div>
 
         <p data-m="terms" style="font-size:12.5px; color:#5C6B62; text-align:center; margin:14px 0 6px">By signing up, you accept our <a href="#">Terms of Service</a>.</p>
-        <p data-m="have" style="font-size:13.5px; text-align:center; margin:0"><a href="./login.html?v=20261006sg" style="font-weight:600; text-decoration:underline">I already have an account</a></p>
+        <p data-m="have" style="font-size:13.5px; text-align:center; margin:0"><a href="./login.html?v=20261007an" style="font-weight:600; text-decoration:underline">I already have an account</a></p>
       </div>
     </sc-if>
 
@@ -192,7 +193,7 @@ class Component extends DCLogic {
     if (typeof window.fbq === 'function') window.fbq('track', 'Lead', { content_name: 'workspace created' });
     if (!data.session) return this.setState({ error: 'Almost there — confirm your email from the link we just sent, then log in.' });
     this.setState({ done: true, error: '' });
-    this._t = setTimeout(() => { window.location.href = './app.html?v=20261006sg'; }, 1400);
+    this._t = setTimeout(() => { window.location.href = './app.html?v=20261007an'; }, 1400);
   };
 
   componentWillUnmount() { clearTimeout(this._t); }
